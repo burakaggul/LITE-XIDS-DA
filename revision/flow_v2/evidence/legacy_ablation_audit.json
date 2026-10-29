@@ -1,0 +1,10 @@
+{
+  "track": "legacy",
+  "rows": 80,
+  "all_costs_matched_within_seed_arm": true,
+  "source_only_policy_record_sha256": "23179f8bcebb896402c9160cec23480ceda64a3ed337fc23d5f27cb0131930ba",
+  "not_independent_test": true,
+  "posthoc_component_analysis": true,
+  "code_sha256": "b036946f281ae2962c8796a55f6848b40f2d11fee57833003fa5e98d5239afa1",
+  "caveat": "Component effects are paired within their own cohort and fixed source-selected cost. Legacy features are historical proxies, not physically matched raw flows. Five seeds are conditional resampling/training variability."
+}

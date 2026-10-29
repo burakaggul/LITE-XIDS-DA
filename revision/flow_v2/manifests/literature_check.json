@@ -1,0 +1,18 @@
+{
+  "checked_on": "2026-10-29",
+  "sources": [
+    {
+      "title": "A rule-based label harmonization framework for cross-dataset IoT intrusion detection",
+      "doi": "10.1016/j.iot.2026.102030",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2542660526001605",
+      "venue": "Internet of Things, volume 39, September 2026, article 102030",
+      "overlap": "The publisher describes common Zeek-based features, label harmonization and evaluation across datasets. Common extraction alone cannot be claimed as novel in the present revision."
+    },
+    {
+      "title": "NFStream API documentation",
+      "url": "https://www.nfstream.org/docs/api",
+      "use": "accounting_mode=1 measures IP-layer byte features; timeouts and bidirectional flow statistics are declared explicitly."
+    }
+  ],
+  "claim_limit": "Cost-sensitive learning, common feature extraction, knowledge distillation and dynamic quantization are established techniques. Any contribution must be supported by the audited protocol, matched controls and actual external outcomes, not by asserting novelty of their combination."
+}

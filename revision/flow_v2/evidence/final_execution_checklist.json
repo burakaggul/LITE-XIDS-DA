@@ -1,0 +1,134 @@
+{
+  "checked_utc": "2026-10-29T22:13:49.867820+00:00",
+  "steps": [
+    {
+      "step": "Pinned real raw data",
+      "status": "verified",
+      "evidence": "results/source_integrity.json",
+      "note": "Mirror object integrity is not independent official-release authenticity."
+    },
+    {
+      "step": "Chronology-safe common extraction",
+      "status": "verified",
+      "evidence": "results/extraction.json",
+      "note": "Complete packet records only; incomplete source tails retained in originals and reported."
+    },
+    {
+      "step": "Physical features and cross-role observational overlap",
+      "status": "verified",
+      "evidence": "results/prepared_audit.json",
+      "note": "Observational identity is not proof of packet-byte identity or independent acquisition sessions."
+    },
+    {
+      "step": "Author-hosted event annotation import",
+      "status": "verified",
+      "evidence": "manifests/official_event_sources.json",
+      "note": "Point timestamps do not acquire fabricated durations or implicit benign labels."
+    },
+    {
+      "step": "Common label quality gate",
+      "status": "failed",
+      "evidence": "manifests/common_dataset.json",
+      "note": "Observed coverage 93.634804%; required 95%; not classifier accuracy."
+    },
+    {
+      "step": "legacy: Five-seed source-only cost experiment",
+      "status": "verified",
+      "evidence": "results/result_audit_legacy.json",
+      "note": "Historical diagnostic, not a fresh common-flow test."
+    },
+    {
+      "step": "legacy: Matched-cost teacher/supervised/KD/INT8 controls",
+      "status": "verified",
+      "evidence": "results/legacy_ablation_audit.json",
+      "note": "Historical diagnostic, not a fresh common-flow test."
+    },
+    {
+      "step": "legacy: Matched-backend float/INT8 CPU controls",
+      "status": "verified",
+      "evidence": "results/legacy_matched_backend_cpu_audit.json",
+      "note": "Historical diagnostic, not a fresh common-flow test."
+    },
+    {
+      "step": "legacy: External SHAP and descriptive PDP",
+      "status": "verified",
+      "evidence": "results/legacy_xai_audit.json",
+      "note": "Historical diagnostic, not a fresh common-flow test."
+    },
+    {
+      "step": "common: Five-seed source-only cost experiment",
+      "status": "implemented_not_executed",
+      "evidence": "results/result_audit_common.json",
+      "note": "No target metrics select source policies."
+    },
+    {
+      "step": "common: Matched-cost teacher/supervised/KD/INT8 controls",
+      "status": "implemented_not_executed",
+      "evidence": "results/common_ablation_audit.json",
+      "note": "No target metrics select source policies."
+    },
+    {
+      "step": "common: Matched-backend float/INT8 CPU controls",
+      "status": "implemented_not_executed",
+      "evidence": "results/common_matched_backend_cpu_audit.json",
+      "note": "No target metrics select source policies."
+    },
+    {
+      "step": "common: External SHAP and descriptive PDP",
+      "status": "implemented_not_executed",
+      "evidence": "results/common_xai_audit.json",
+      "note": "No target metrics select source policies."
+    },
+    {
+      "step": "Common matched-source LR/RF controls",
+      "status": "implemented_not_executed",
+      "evidence": "results/common_baseline_audit.json",
+      "note": ""
+    },
+    {
+      "step": "final_windows_tests",
+      "status": "verified",
+      "evidence": "results/step_final_windows_tests.json",
+      "note": ""
+    },
+    {
+      "step": "final_linux_feature_tests",
+      "status": "verified",
+      "evidence": "results/step_final_linux_feature_tests.json",
+      "note": ""
+    },
+    {
+      "step": "final_linux_chronology_tests",
+      "status": "verified",
+      "evidence": "results/step_final_linux_chronology_tests.json",
+      "note": ""
+    },
+    {
+      "step": "official_event_tests",
+      "status": "verified",
+      "evidence": "results/step_official_event_tests.json",
+      "note": ""
+    },
+    {
+      "step": "Real Raspberry Pi/Jetson tests",
+      "status": "deferred_by_user",
+      "evidence": "",
+      "note": "Not performed; desktop timings are not embedded-device evidence."
+    },
+    {
+      "step": "New experiment integration into manuscript/reviewer responses",
+      "status": "not_completed",
+      "evidence": "",
+      "note": "Original submission and previous working revision retained. New experiment outputs are not silently substituted for submitted results."
+    }
+  ],
+  "common_experiment_fully_verified": false,
+  "all_revision_requests_completed": false,
+  "hardware_completed": false,
+  "submitted_original_unchanged": true,
+  "immutable_training_protocol_sha256": "9733c76fa9c88554a17ac86f708287451cf1c98c1fd8ca1a9565244b9d719241",
+  "common_data_manifest_sha256": "1bfcd88d69684d9f91873a5fd9d430af16492724bd8a1e8a3ec3deeb2d07f3e5",
+  "raw_flow_observations": 10388822,
+  "retained_hash_sample_flows": 998994,
+  "note": "A successful audit command means the status is checked, not that pending scientific work is complete."
+}

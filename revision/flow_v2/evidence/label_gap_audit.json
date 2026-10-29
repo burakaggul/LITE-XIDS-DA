@@ -1,0 +1,32 @@
+{
+  "required_coverage": 0.95,
+  "observed_coverage": 0.9363480372665488,
+  "annotation_tables_checked": 41,
+  "official_point_tables_included": true,
+  "primary_quality_gate_passed": false,
+  "unknown_records": 41621,
+  "unknown_without_same_tuple_at_any_original_time": 32972,
+  "unknown_with_tuple_but_no_complete_consistent_time_support": 8649,
+  "largest_gap_capture": "ton_iot:normal_scanning6.pcap",
+  "largest_gap_records": 26446,
+  "largest_gap_coverage": 0.1184666666666666,
+  "largest_gap_share_of_unknown": 0.6354003988371255,
+  "prepared_data_manifest_sha256": "1bfcd88d69684d9f91873a5fd9d430af16492724bd8a1e8a3ec3deeb2d07f3e5",
+  "labels_inferred_or_modified": false,
+  "threshold_relaxed": false,
+  "capture_roles_changed": false,
+  "common_models_trained": false,
+  "cause_limit": "Absent tuple support establishes unavailable matching table annotations; it does not establish which dataset release, extraction filtering or capture provenance caused the absence.",
+  "official_source": "https://research.unsw.edu.au/projects/toniot-datasets",
+  "missing_resource": "Official SecurityEvents_GroundTruth_datasets and capture-to-event/clock mapping, or an independently validated complete matching annotation release.",
+  "prohibited_workarounds": [
+    "filename-derived labels",
+    "nearest-record labels",
+    "unverified attacker-IP rules",
+    "relaxing the frozen coverage threshold",
+    "dropping the low-coverage final capture"
+  ],
+  "next_action": "Obtain authoritative matching ground truth; validate its mapping without inspecting common model performance; rerun the unchanged quality gate before common fitting.",
+  "not_a_classifier_performance_measure": true,
+  "code_sha256": "dfc284b899f491722fac47837c6699f36f8ca10788301a6ea54549956915217a"
+}

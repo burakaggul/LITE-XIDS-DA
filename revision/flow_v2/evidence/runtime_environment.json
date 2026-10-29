@@ -1,0 +1,49 @@
+{
+  "windows": {
+    "python": "3.13.11",
+    "os": "Windows-11-10.0.26300-SP0",
+    "cpu": {
+      "Name": "Intel(R) Core(TM) i9-14900HX",
+      "NumberOfCores": 24,
+      "NumberOfLogicalProcessors": 32,
+      "MaxClockSpeed": 2200
+    },
+    "ram_bytes": 68405403648,
+    "packages": {
+      "numpy": "2.3.2",
+      "pandas": "3.0.1",
+      "scikit-learn": "1.8.0",
+      "torch": "2.10.0+cpu",
+      "xgboost": "3.2.0",
+      "lightgbm": "4.6.0",
+      "psutil": "7.2.2",
+      "duckdb": "1.5.3",
+      "pyarrow": "26.0.0",
+      "nfstream": "6.6.0",
+      "scapy": "2.7.0",
+      "shap": "0.54.1",
+      "pytorch-tcn": "1.2.3",
+      "scipy": "1.17.1",
+      "joblib": "1.5.3",
+      "huggingface_hub": "2.4.0",
+      "hf-xet": "1.7.1"
+    }
+  },
+  "linux_extraction": {
+    "python": "3.12.3",
+    "packages": {
+      "nfstream": "6.6.0",
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scapy": "2.7.0",
+      "psutil": "7.2.2",
+      "cffi": "2.1.1"
+    }
+  },
+  "training_threads": 4,
+  "inference_threads": 1,
+  "benchmark_context": "Desktop CPU measurements during concurrent source download/extraction jobs; not isolated embedded-device performance. Process RSS includes the Python/framework process and cached artifacts, not model-only memory.",
+  "extractor_workers": "4 requested; corrected chronology-safe extraction records effective_n_meters per capture. The earlier archived unsorted exploratory run sometimes reduced to 1.",
+  "latency_scope": "Completed-flow model and preprocessing-plus-model latency only. Packet capture, flow construction, idle timeout (30s) and active timeout (120s) are excluded; no live time-to-detection or full IDS throughput is claimed.",
+  "real_edge_hardware_used": false
+}

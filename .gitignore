@@ -8,3 +8,17 @@ __pycache__/
 *.ubj
 *.zip
 device_results*.json
+/revision/flow_v2/archive/
+/revision/flow_v2/cache/
+/revision/flow_v2/frames/
+/revision/flow_v2/prepared/
+/revision/flow_v2/models/
+/revision/flow_v2/logs/
+/revision/flow_v2/label_index/
+/revision/flow_v2/official_event_index/
+/revision/flow_v2/results/
+/revision/flow_v2/figures/
+/revision/flow_v2/manifests/frozen_*.json
+/revision/flow_v2/manifests/training_protocol*.json
+/revision/flow_v2/manifests/common*.json
+/revision/flow_v2/manifests/official*.json

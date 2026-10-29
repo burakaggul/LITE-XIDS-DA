@@ -1,0 +1,34 @@
+{
+  "protocol": {
+    "preprocessing": "source-train-only median imputation, signed log1p, source-train StandardScaler",
+    "amendment": "v2.1 before any final scores: batch-one invariant INT8 inference and source-only recalibration of previously trained legacy weights",
+    "teacher": {
+      "n_estimators": 300,
+      "max_depth": 6,
+      "learning_rate": 0.05,
+      "subsample": 0.9,
+      "colsample_bytree": 0.9,
+      "threads": 4
+    },
+    "class_weight": "inverse source training frequency times benign cost; mean training weight normalized to one",
+    "student": "existing MLP: 12 -> 64 ReLU Dropout(0.1) -> 32 ReLU -> 2; identical supervised and KD capacity",
+    "loss": "training-class-weighted hard CE and per-row soft KL; T=3, hard fraction=0.25",
+    "early_stopping": "source calibration weighted hard CE, max20, patience4; same calibration also selects operating points",
+    "quantization": "PyTorch dynamic qint8 Linear; scripted row-wise execution fixes activation calibration to one record regardless of outer batch; operating point calibrated on source only",
+    "historical": "same legacy pool sample size and grouped source/final split as previous revision; target grouped half previously examined, diagnostic only",
+    "common": "fixed capture-disjoint train/calibration/final roles; per-source train/cal cap30000; final never fitted",
+    "inference": "single CPU thread, 30 warmups, 200 timed model-only batch1 calls and 50 preprocessing+model calls",
+    "comparison": "A/C legacy paired; B/D common paired; cross-track contrasts are descriptive, not capture-matched causal effects",
+    "success": "report both external recall and FPR; reducing alarms by predicting everything benign is not a successful IDS"
+  },
+  "config_sha256": "797006b399008398b0751f2f9e39166f8ce9a340f493a2806f678908828ee959",
+  "code_sha256": {
+    "cost_models.py": "40857696dcec334e91a5435d5b1a46a2ba8cfbf1d3a245834201bc02089fddee",
+    "experiment.py": "380aea1992cafc0acb7a36d052a0deacd1fa6792e0a4c3ff90581e36bd0eddc4",
+    "operating_points.py": "c0353ceaaffaf3c7a891f5e132354032aa08433f2da9933b124aab04d0544419",
+    "features.py": "0021676777894b3b2766174e598b686a77057f8cd2c068f4a60584fd8c851b2d",
+    "neural_revision.py": "f699c70e0521e83ba2cf06f3d66bad78ad02add28cb55a72aaff02807d6509e5",
+    "protocol.py": "a53f4e5ddf390a9fd234baae3ba5d09661f824f1ae610f0e30555e86079388ef",
+    "data_revision.py": "3f5ac500f2bee4089f47448cd2eb40a9bda6ba9e2710f27dcc7e75b297a29224"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "performance_rows": 320,
+  "source_seed_bundles": 10,
+  "all_confusion_metrics_recomputed": true,
+  "all_choices_reproduced_from_source_only": true,
+  "all_frozen_model_hashes_verified": true,
+  "per_group_metric_convention_explicit": true,
+  "frozen_manifest_sha256": "a9b136c46ce15c25ae70fffc028f94a414d998a2674a83608866475a2e42530c"
+}

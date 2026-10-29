@@ -1,0 +1,9 @@
+{
+  "all_80_component_confusion_metrics_recomputed": true,
+  "all_component_costs_and_thresholds_reproduced_from_source": true,
+  "all_20_subtype_confusion_totals_match_primary_results": true,
+  "external_shap_feature_rows": 240,
+  "all_20_cpu_profiles_same_backend_and_cost": true,
+  "interpretation": "Historical diagnostic only. INT8 size reduction is not a runtime improvement; higher FPR or lost recall cannot be called successful transfer.",
+  "code_sha256": "7dd6d17f3fc025d6ea3a007cebb303463fc0a78eb08334624b91fb53d812dffa"
+}

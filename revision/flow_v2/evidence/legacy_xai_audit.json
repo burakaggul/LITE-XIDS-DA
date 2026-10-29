@@ -1,0 +1,23 @@
+{
+  "track": "legacy",
+  "posthoc_diagnostic_only": true,
+  "explained_models": 20,
+  "query_rows_per_model": 64,
+  "source_background_rows": 64,
+  "seeds": [
+    11,
+    23,
+    42,
+    67,
+    89
+  ],
+  "fixed_external_queries_across_seeds": true,
+  "source_training_background_only": true,
+  "local_additivity_max_residual": 1.7462299384263247e-09,
+  "probability_scale": true,
+  "external_labels_used_only_for_error_reporting": true,
+  "new_common_flow_result": false,
+  "frozen_manifest_sha256": "a9b136c46ce15c25ae70fffc028f94a414d998a2674a83608866475a2e42530c",
+  "code_sha256": "fa86c2cb7b9ed3b59f3fec54c656289dffd9a7dd01570a072a0a41b054e54dd0",
+  "limitations": "Legacy proxy semantics remain mismatched. Correlated and derived features permit off-manifold SHAP/PDP perturbations. Small fixed samples and five seeds do not establish causal explanations or deployment-wide explanation quality. Model choices use source calibration, but these analyses follow inspection of the historical final results."
+}

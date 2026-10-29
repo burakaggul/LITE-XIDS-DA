@@ -1,0 +1,17 @@
+{
+  "version": "official-event-points-v1",
+  "declared_utc": "2026-10-29T22:05:20.182208+00:00",
+  "previous_data_manifest_sha256": "7fa2430d574f1134d19bf121b116239c909a14584eb795f3d1da1c0355c43b0b",
+  "previous_label_coverage": 0.9363480372665488,
+  "reason": "Acquire original author-hosted annotations to diagnose unsupported Zeek-table labels before any common-flow model fitting.",
+  "source": "https://research.unsw.edu.au/projects/toniot-datasets",
+  "event_rule": "Exact orientation-invariant tuple; start=end=official event timestamp; no event duration imputed. Apply the already frozen 1s tolerance and unanimous overlapping binary/full-union-time support jointly with original Zeek intervals.",
+  "normal_rule": "Only explicit type=normal is benign; absence from an attack table is not benign evidence.",
+  "required_coverage": 0.95,
+  "clock_tolerance_seconds": 1.0,
+  "capture_roles_unchanged": true,
+  "training_code_and_hyperparameters_unchanged": true,
+  "common_model_performance_inspected": false,
+  "new_source_count": 18,
+  "code_sha256": "a5564259c971d9e328f7b1517224fd215dcd3f417b83dc22d24d9f42dad130fa"
+}

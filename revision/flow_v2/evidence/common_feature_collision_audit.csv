@@ -1,0 +1,4 @@
+dataset,rows,unique_common_feature_vectors,common_feature_duplicate_rows,label_conflict_keys,label_conflict_rows,feature_keys_shared_across_roles,observed_majority_lookup_accuracy_ceiling
+cic_iot_2023,345110,71203,273907,7100,104121,12517.0,0.9187012836486917
+ton_iot,602277,216116,386161,146,65590,11572.0,0.9984890673228431
+combined_descriptive_only_not_for_training,947387,285657,661730,7330,287770,,0.968115458624617

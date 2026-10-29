@@ -1,0 +1,475 @@
+{
+  "files": [
+    {
+      "capture_id": "cic_iot_2023:PCAPS/Benign_Final/BenignTraffic1.pcap",
+      "bytes": 384678488,
+      "sha256": "ebb5f66fffb9e940063d17836b504943cebe2cf15d086b74ff0aee39faf4a0d2",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/Benign_Final/BenignTraffic2.pcap",
+      "bytes": 400328048,
+      "sha256": "78adc253bd424517ccb3bff1471af920bc3b4de9ed65bb86d49ac48d5463fbd5",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/Benign_Final/BenignTraffic3.pcap",
+      "bytes": 167981096,
+      "sha256": "76b2b0c2f17d2e04a0748df495fdd94de54b4454a51bd85172f3000cf3c6666c",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/Backdoor_Malware/Backdoor_Malware.pcap",
+      "bytes": 4266988,
+      "sha256": "fc7590677fef97b1619281b32599ff3cb71fb5e27314ccae9a49013604a52e1b",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/BrowserHijacking/BrowserHijacking.pcap",
+      "bytes": 7779308,
+      "sha256": "4859d454f435c65b129f3a0128b88bd90917cc48fbdb56e4a93c482cac67788f",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/CommandInjection/CommandInjection.pcap",
+      "bytes": 7387028,
+      "sha256": "0ca6b7c518c0c4fdb201cd071549ebabd1629581a84369227259e9461f108f8e",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/DictionaryBruteForce/DictionaryBruteForce.pcap",
+      "bytes": 16378380,
+      "sha256": "2b8ee705c654047d95ead31d7039438e27ee299e188b3485c4c1d78355466606",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/Recon-HostDiscovery/Recon-HostDiscovery.pcap",
+      "bytes": 149185096,
+      "sha256": "3f20a372d1d2178c4c5fefd57b1ec7ad3ef447b7439ba233cfc8fce096ca5dd8",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/Recon-OSScan/Recon-OSScan.pcap",
+      "bytes": 115547576,
+      "sha256": "34526ef21a33fda5db763e3876fdd8ade307205a8b2f961e4df7547c485d1bc8",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/Recon-PortScan/Recon-PortScan.pcap",
+      "bytes": 93039768,
+      "sha256": "3454c84fadbd951ced6d64dc708d9f1911367f5b9428b372398f601f5c032a68",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/SqlInjection/SqlInjection.pcap",
+      "bytes": 6360868,
+      "sha256": "0ac903fb79c111786f60c2fc769954fc2d443b1bd4b418618c9d1ece806f4450",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/XSS/XSS.pcap",
+      "bytes": 5137000,
+      "sha256": "0615633300b569d1110daa1eaa626bdf4b1a269589ad99a98681f89a6bfbe697",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/DDoS-ACK_Fragmentation/DDoS-ACK_Fragmentation12.pcap",
+      "bytes": 148134264,
+      "sha256": "1f57308091c7db53761e24484c66d70fcda37c817d9664c08d9119295fb3b80c",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/DDoS-ACK_Fragmentation/DDoS-ACK_Fragmentation5.pcap",
+      "bytes": 347283340,
+      "sha256": "d14161029a6fa28792e04cd664d4ba2a4327de70ad70afa75b3d7e71f5ff8c17",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/DDoS-ACK_Fragmentation/DDoS-ACK_Fragmentation6.pcap",
+      "bytes": 348790444,
+      "sha256": "a578712bb3890f0e9b3799eef61dd7c949c1672a7648de563411e262c6829b11",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/Mirai-udpplain/Mirai-udpplain24.pcap",
+      "bytes": 238848072,
+      "sha256": "4055ee81d68ae8835c09b5d190a9563d6e57bb0c02c7f2ba16970901bf40c4e8",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:MITM_normal4.pcap",
+      "bytes": 190683831,
+      "sha256": "08537bc9703f352f911ce7a152d0e3ef7c199b53f834406e0c8da40a0b5fa7fe",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:injection_normal4.pcap",
+      "bytes": 290705408,
+      "sha256": "55cd03ee52f27382f89bb6bc9c61a21b234fd126d4efa0d35d8b8e7a6a240fb0",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_DDoS_1.pcap",
+      "bytes": 174070750,
+      "sha256": "9de31c18e9f1123262fe01e40e1de4309307462695a34c7a1b6892424a97fc1b",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_runsomware1.pcap",
+      "bytes": 218704048,
+      "sha256": "9b1618e5021803202da6751bde3557ab05dc0862468a39fa2818a7c3917201f4",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_23.csv",
+      "bytes": 51705634,
+      "sha256": "e89c54673961c2b260265cdd3f6c50355369f8a80e63c31999df04b0a757f213",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_1.csv",
+      "bytes": 146725605,
+      "sha256": "37ea5238fcd2a7a18574b8e37e0427086c6c34d03a22f690256fc925946c0448",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_5.csv",
+      "bytes": 145230697,
+      "sha256": "2cfccfbc2816418b49ab8bf26bcd45f0a4796f634512f7e5dff9def7b601778e",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_2.csv",
+      "bytes": 145496506,
+      "sha256": "63b70bb96a95499b477b890674b74cc207ccb638b68ea4cc3a3dea9a448772c1",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_11.csv",
+      "bytes": 148428210,
+      "sha256": "ffd77ddb051852facd348ec189cf1204a01c0cc840da312c1a440fd0d8c287cf",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_7.csv",
+      "bytes": 147175352,
+      "sha256": "e5d3303520909b2e90e57199aa2159f8b2bef287b56502f453df2a6407ca39ab",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_9.csv",
+      "bytes": 146509873,
+      "sha256": "ed86e18cd03c6b9e1963964e400a04c4b7684356f2ca7d3acca172c942c4dfba",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_DDoS_12.pcap",
+      "bytes": 435105832,
+      "sha256": "20291804d5e879e9afc19500302b3fc052240c8cbba054b9bf78c3b87819735c",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/Benign_Final/BenignTraffic.pcap",
+      "bytes": 462860236,
+      "sha256": "534797b680b3c3fa3cd0c0d37530d0ec64152c17d12ccf1d4cf1177d3dace596",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_3.csv",
+      "bytes": 145618265,
+      "sha256": "7c8710722f26679c5d795b60019975945a81730934c768083261e66e3b1ee366",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_4.csv",
+      "bytes": 145220077,
+      "sha256": "a20b2aed18fa474681f3614d35d4a23554272d6424cf6148596015440fb84a91",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_8.csv",
+      "bytes": 146639523,
+      "sha256": "485c53e676016c730018ec51ef885efa584546f6930035c75876b5ba520814be",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_17.csv",
+      "bytes": 149859400,
+      "sha256": "d933a39088804258386441d83e4dec29ad14b97378b2a216f9919b0f5180143a",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_10.csv",
+      "bytes": 146536008,
+      "sha256": "c33290654db525d0f926d4bc010d27f82c615e1ba87cff0c9e87b1cff673d2ad",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_18.csv",
+      "bytes": 150807171,
+      "sha256": "32d04d9cfefee40774e979c600ec322e2da6518bb6d8974999075007794c3934",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_13.csv",
+      "bytes": 151016885,
+      "sha256": "fc295ee26ebee93e3ab0b0e61ae7ab567fb86c1b67cbcd1d8025944c9e5ad24c",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_14.csv",
+      "bytes": 153329384,
+      "sha256": "8eb759212e6b36c29478b5e45102814438b48e7929477a5bb8e734390cdc3ab0",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_16.csv",
+      "bytes": 153017885,
+      "sha256": "415376cfbd6a4592b717b5e756ca5c1548d4491121e01fb0bab79555d8665cae",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_12.csv",
+      "bytes": 153629818,
+      "sha256": "80fd7d6782d4acdd9c528085d38823e1036b530c551d3b646bc7d0eeb5298512",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_15.csv",
+      "bytes": 153194923,
+      "sha256": "f7dded78b7670900cfa9c56e4b3df1c6c6f8ec3d82262c1b184af7f9d87e9f43",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_22.csv",
+      "bytes": 153268181,
+      "sha256": "a1f6009f2be53bc1fba90f044d07ff5a9c5cfe4912b56690d8f02fb75aa335c0",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_20.csv",
+      "bytes": 157610648,
+      "sha256": "ca793a8ff6860c2a8b8e8b4bc72271bbbfc011b0b6c523765658949e1513fd0f",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_21.csv",
+      "bytes": 158679239,
+      "sha256": "63fe9f2c91c48c0f30721eda03864675e1d87103a36cd61c19a3ac68d8ac077b",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_19.csv",
+      "bytes": 156962122,
+      "sha256": "162203394dc41b3020bdc70b99e213f620fd66bacd333dbdf1cd5279adbd5f5d",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:Network_dataset_6.csv",
+      "bytes": 165814042,
+      "sha256": "e8aa726d8551ffe59ea816bb1199455c0ebd53f44993a8bbec67ef0843bab229",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_scanning6.pcap",
+      "bytes": 479811584,
+      "sha256": "6c36fd8cf7d547841191ca9d78b2cc66a577046cc3168bbf4ee4880441b10f9d",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/Mirai-udpplain/Mirai-udpplain11.pcap",
+      "bytes": 577304476,
+      "sha256": "fc7500e739886a6f637f9aa4a8722e357bbfd222a5cc0c092bb6cef2943eeb9b",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_backdoor.pcap",
+      "bytes": 573411872,
+      "sha256": "441881c18617920f3cd29387498cd2cf5981dc975d5be2090c737cefaf460fbd",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:password_normal1.pcap",
+      "bytes": 560091136,
+      "sha256": "5be996df9ae286f11f66f78708292ed8fade7d135c05514aff3e3d298fd17844",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS6.pcap",
+      "bytes": 644509516,
+      "sha256": "354b1a1e03e272163d65c8fae78d368963df8924861b7004c707c2421369d096",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:password_normal5.pcap",
+      "bytes": 644766672,
+      "sha256": "49bc5a01c1aa69de73f1e41a6a35e4c4a6b0bb2183d8e0001d938f96088f37be",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_DDoS_4.pcap",
+      "bytes": 571205372,
+      "sha256": "7a5a1fdbe16f4de699b2da5de60474252579fba8b138d5693b7edfcbd649ae65",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "cic_iot_2023:PCAPS/Mirai-udpplain/Mirai-udpplain2.pcap",
+      "bytes": 576207132,
+      "sha256": "fe088587d9e15ae3727c27dff0a45e17e2e6a67c5bff97f66ea932e6a66ce205",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_scanning1.pcap",
+      "bytes": 617628321,
+      "sha256": "464f17996a5158964fc5ef4e48e6f108ea70b834bccc973e94e730371c1c51c5",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS5.pcap",
+      "bytes": 646022588,
+      "sha256": "73d96ce30163f8a84b99e5afdbd0a940bc7510523ccfa3a4b17492ade0512eb0",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS4.pcap",
+      "bytes": 643551748,
+      "sha256": "30603e78245e811924569b93a06b632714c37bd0d6353b56845eb5529df90d28",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_DoS_5.pcap",
+      "bytes": 621352060,
+      "sha256": "b1e6fe8f3c47a76c7f1315984e56a2c023185a4b59a70419fe3c460aa8b7cf0e",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS3.pcap",
+      "bytes": 650550776,
+      "sha256": "b4e08f2b8fe557266c32d971197d05b66bdf152d91798c6fb363355abc95ae74",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS9.pcap",
+      "bytes": 649287216,
+      "sha256": "e44e531faecf96dcd489f50094f206f4d9f600432f318affc3314a57e0ce64b8",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_DoS_1.pcap",
+      "bytes": 678883328,
+      "sha256": "8a5645821c9c588150cdff5ffa50166851a30f3789685a1f81fcbad2d2640454",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS7.pcap",
+      "bytes": 649801292,
+      "sha256": "1a9da9c070c656f99a6fbb01e44bd3ac0ccb84e40e2c7563c3b6df5667d62072",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:MITM_normal1.pcap",
+      "bytes": 799512478,
+      "sha256": "dee5f8b409464227c1bde2d80030d2b73fc8c6d849c38874c21c990f9e2f6141",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:injection_normal1.pcap",
+      "bytes": 841801728,
+      "sha256": "f01ea01bf4c393783e5dc313914c50043233f65a8c3f090254f3e6c8a5af9ae5",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:password_normal2.pcap",
+      "bytes": 948842484,
+      "sha256": "4e334fed10c763a998b530f7d2b9c792ac1424c776bb7a6d4b1d82fc4fb717a8",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:password_normal4.pcap",
+      "bytes": 951716892,
+      "sha256": "c9c4c6273a13bbfd0df676b5aaa7578c8611543d5ea42ee6ffbc9c055ae13a26",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:normal_runsomware2.pcap",
+      "bytes": 1035136804,
+      "sha256": "aea6627c8d07a549193584ff284bfb153f55c660222470da84a67b95a5441461",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    },
+    {
+      "capture_id": "ton_iot:password_normal3.pcap",
+      "bytes": 948593220,
+      "sha256": "cf6c9e6d6a34bdfe101b6576a6ed6b1e36e424cf48ae3a4f2b792227f9d3b29e",
+      "pinned_integrity_method": "LFS SHA256",
+      "mirror_verified_not_official_copy": true
+    }
+  ],
+  "complete": true,
+  "pending": 0
+}

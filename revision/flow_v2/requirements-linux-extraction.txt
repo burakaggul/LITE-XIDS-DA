@@ -1,0 +1,6 @@
+nfstream==6.6.0
+numpy==2.5.4
+pandas==3.1.0
+scapy==2.7.0
+psutil==7.2.2
+cffi==2.1.1

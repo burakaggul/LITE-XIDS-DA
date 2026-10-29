@@ -1,0 +1,12 @@
+{
+  "track": "legacy",
+  "rows": 20,
+  "same_backend": true,
+  "same_cost_and_float_weights": true,
+  "warmups": 100,
+  "timed_calls": 500,
+  "batch_size": 1,
+  "cpu_threads": 1,
+  "caution": "Primary pipeline timing includes its chosen implementation backend. Only this paired table isolates float versus INT8 under a matched TorchScript row-wise backend. Neither is a real-device measurement.",
+  "code_sha256": "ff676bb8de8f07d1ca780e0fed3ad0ce83aa0148164e4befb497cf85664c1dd8"
+}

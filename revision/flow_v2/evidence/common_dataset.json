@@ -1,0 +1,76 @@
+{
+  "quality_gate_passed": false,
+  "ton_label_coverage": 0.9363480372665488,
+  "captures": 44,
+  "source_plan_sha256": "8f4d3dd0d9fc29961613d180ac78067d11c4b84d8c5f16bfe3e69257d714e8b1",
+  "comparison_alignment": "Historical tables cannot be asserted capture-matched to new flows. A/C and B/D are paired within their tracks; cross-track feature effects remain descriptive unless independently matched.",
+  "label_unit_cic": "capture category inherited, not independently verified per flow",
+  "label_unit_ton": "consistent-label interval union covers complete flow time against original-schema Zeek records; any overlapping binary conflict is excluded",
+  "unknown_labels_excluded": 41621,
+  "test_performance_inspected": false,
+  "partitions": [
+    {
+      "dataset": "cic_iot_2023",
+      "role": "final",
+      "rows": 68002,
+      "benign": 30000,
+      "attack": 38002,
+      "capture_files": 4,
+      "observational_overlap_rows_excluded": 0,
+      "projected_duplicate_rows": 47471
+    },
+    {
+      "dataset": "cic_iot_2023",
+      "role": "calibration",
+      "rows": 94021,
+      "benign": 30000,
+      "attack": 64021,
+      "capture_files": 4,
+      "observational_overlap_rows_excluded": 0,
+      "projected_duplicate_rows": 70404
+    },
+    {
+      "dataset": "cic_iot_2023",
+      "role": "train",
+      "rows": 183087,
+      "benign": 60000,
+      "attack": 123087,
+      "capture_files": 11,
+      "observational_overlap_rows_excluded": 0,
+      "projected_duplicate_rows": 138680
+    },
+    {
+      "dataset": "ton_iot",
+      "role": "final",
+      "rows": 122610,
+      "benign": 1742,
+      "attack": 120868,
+      "capture_files": 5,
+      "observational_overlap_rows_excluded": 0,
+      "projected_duplicate_rows": 89557
+    },
+    {
+      "dataset": "ton_iot",
+      "role": "calibration",
+      "rows": 97879,
+      "benign": 11032,
+      "attack": 86847,
+      "capture_files": 5,
+      "observational_overlap_rows_excluded": 0,
+      "projected_duplicate_rows": 59876
+    },
+    {
+      "dataset": "ton_iot",
+      "role": "train",
+      "rows": 381788,
+      "benign": 57564,
+      "attack": 324224,
+      "capture_files": 15,
+      "observational_overlap_rows_excluded": 9986,
+      "projected_duplicate_rows": 222894
+    }
+  ],
+  "official_event_sources_sha256": "248fbff0fe29ceb6168712f0cdb109c7d2be3a83f82954b8b5bbc79c6d4b8b5f",
+  "annotation_amendment_sha256": "aec8d8c70f47f7671e1db15d3b13df3de557125ecb0197362874dcc0e83cd83b",
+  "duplicate_identity_limitation": "Orientation-invariant native endpoints, times, directional counters and all common statistics; packet-byte identity and acquisition-session independence are not established"
+}

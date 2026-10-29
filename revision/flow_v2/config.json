@@ -1,0 +1,28 @@
+{
+  "protocol_version": "flow-v2.0-development",
+  "seeds": [11, 23, 42, 67, 89],
+  "primary_pair": ["cic_iot_2023", "ton_iot"],
+  "extractor": {
+    "library": "nfstream",
+    "idle_timeout_seconds": 30,
+    "active_timeout_seconds": 120,
+    "accounting_mode": 1,
+    "decode_tunnels": false,
+    "n_dissections": 0,
+    "statistical_analysis": true,
+    "n_meters": 4
+  },
+  "sample_cap_per_source_partition": 30000,
+  "reservoir_flows_per_capture": 30000,
+  "label_clock_tolerance_seconds": 1.0,
+  "required_ton_label_coverage": 0.95,
+  "benign_cost_grid": [1, 2, 5, 10, 20],
+  "source_fpr_targets": [0.01, 0.05],
+  "selection": "source calibration attack recall under source empirical FPR constraint; then lower FPR; then simpler cost; target labels rejected",
+  "student": {"hidden_sizes": [64, 32], "epochs": 20, "patience": 4, "batch_size": 256, "learning_rate": 0.001, "temperature": 3, "alpha_hard": 0.25},
+  "capture_split": "deterministic global capture assignment before performance inspection; final capture pool never used for fitting or selection",
+  "comparison_cells": {"A": "legacy proxy, standard training", "B": "common extractor, standard training", "C": "legacy proxy, cost-sensitive training", "D": "common extractor, cost-sensitive training"},
+  "comparison_requirement": "A/B feature effect is causal only if captures, label provenance and comparable sampling can be matched; otherwise separate descriptive tracks",
+  "actual_device_required": false,
+  "status": "not yet executed"
+}

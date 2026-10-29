@@ -44,6 +44,45 @@ The extra capture-disjoint final test reserves one benign capture and 20% of att
 
 The `revision/code/edge_benchmark.py` script measures a teacher and compact students on the machine where it is executed. Generate the author-controlled artifacts by running the compression stage, then pass `--artifacts revision/results --device-label "ACTUAL MODEL AND RAM"`. Actual Raspberry Pi/Jetson measurements must be acquired separately; desktop CPU timings are not edge-device evidence. Use a supported 64-bit OS and record the device label, power mode, thread count, temperature, and complete generated JSON. Five timing trials of one fixed artifact are not five independently trained models. The default `first` input policy matches the desktop warm-cache microbenchmark; `cycle` is a separate traffic-vector sensitivity condition. Never run untrusted pickle/model files. Only load author-generated artifacts whose hashes you have checked.
 
+## Experimental Common-Flow Follow-Up
+
+`revision/flow_v2/` contains a separately versioned follow-up, not a replacement
+for the v1.0.0 manuscript results. Its fixed cohort comprises 19 mirrored
+CIC-IoT-2023 captures, all 25 captures in the selected TON mirror, and 23 original
+Zeek-schema label tables. Both sources are processed with NFStream 6.6.0 using
+the same 12 physical feature definitions. Original timestamps and complete packet
+bytes are preserved through chronology normalization; two structurally incomplete
+source tails are quarantined without fabricating bytes.
+
+The common-flow experiment has **not passed its predeclared annotation-quality
+gate**. Label coverage is 93.6348%, below the required 95%. An additional download
+of all 18 original author-hosted `GroundTruth_Network` CSV files did not resolve
+the unsupported flows under the unchanged tuple/time and unanimous-label rules.
+Of 41,621 unresolved sampled flows, 32,972 have no matching tuple in any of the
+41 annotation tables at any timestamp. Common training, common final evaluation,
+and common LR/RF/XAI controls therefore remain unexecuted. Missing events are not
+assigned benign labels and low-coverage final captures are not silently dropped.
+
+The separate historical diagnostic completes five-seed source-only cost-sensitive
+teacher/student experiments, 80 matched-cost component controls, matched-backend
+float/INT8 CPU measurements and external probability-scale SHAP/PDP analyses.
+These are diagnostic results on legacy proxy features, not new raw-flow evidence
+or proof that generalization is solved. The cost intervention does not reliably
+reduce external false alarms. INT8 reduces serialized size but is slower in the
+recorded matched desktop benchmark. No Raspberry Pi or Jetson execution is claimed.
+
+See `revision/flow_v2/README.txt` for the two-runtime workflow and its stopped gate.
+The `evidence/` directory contains aggregate numerical outputs, provenance hashes
+and execution audits only. It excludes raw packets, original CSV annotations,
+model pickles, reviewer correspondence and private working reports. New runs
+create their own code/data freezes; author execution snapshots are not silently
+reused as fresh model choices. The unit tests cover both rejection of failed
+annotation gates and preservation of original packet/event timing semantics.
+
+Windows ML additions are in `revision/flow_v2/requirements-windows.txt`; Linux
+extraction additions are in `requirements-linux-extraction.txt`. The existing
+root requirements still describe the original revision environment.
+
 ## Author
 
 Burak Aggul, Istanbul Topkapi University. Contact: burakaggul@topkapi.edu.tr.
