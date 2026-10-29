@@ -1,0 +1,16 @@
+{
+  "seeds": [11, 23, 42, 67, 89],
+  "sample_rows_per_dataset": 30000,
+  "source_calibration_fraction_of_all_source_rows": 0.15,
+  "target_evaluation_fraction": 0.5,
+  "alarm_budgets": [0.001, 0.005, 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 0.8],
+  "cpu_threads": 4,
+  "neural_epochs": 20,
+  "distillation_temperature": 3.0,
+  "distillation_alpha_hard": 0.25,
+  "benchmark_warmup": 100,
+  "benchmark_repetitions": 500,
+  "selection_rule": "source calibration macro F1 then balanced accuracy then complexity then lexical identifier",
+  "alarm_rule": "raw margins when available and randomized boundary ties; empirical budget in expectation on adaptation data only",
+  "status": "revision in progress; not submission ready"
+}

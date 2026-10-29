@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+data/
+*.pt
+*.joblib
+*.npz
+*.ubj
+*.zip
+device_results*.json

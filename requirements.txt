@@ -1,0 +1,15 @@
+numpy==2.3.2
+pandas==3.0.1
+scikit-learn==1.8.0
+scipy==1.17.1
+torch==2.10.0
+shap==0.54.1
+xgboost==3.2.0
+lightgbm==4.6.0
+pyarrow==26.0.0
+pytorch-tcn==1.2.3
+joblib==1.5.3
+psutil>=5.9
+PyYAML>=6.0
+matplotlib>=3.8
+statsmodels>=0.14
