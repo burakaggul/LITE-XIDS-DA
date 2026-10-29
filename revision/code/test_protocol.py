@@ -49,6 +49,19 @@ class ProtocolTests(unittest.TestCase):
             binary_labels(['benign', 'unlabeled'])
         self.assertEqual(binary_labels([0.0,1.0]).tolist(), [0,1])
 
+    def test_identity_fields_distinguish_original_records(self):
+        from data_revision import prepare
+        data=pd.DataFrame({'src_ip':['192.0.2.1','192.0.2.2'], 'dst_ip':['192.0.2.3']*2,
+            'src_port':[100,101], 'dst_port':[80,80], 'proto':['tcp']*2, 'duration':[1.,1.],
+            'src_bytes':[100.,100.], 'dst_bytes':[100.,100.], 'src_pkts':[2,2], 'dst_pkts':[2,2],
+            'label':[0,0], 'type':['normal']*2, '_uid':['a','b'], '_capture':['c']*2, '_attack':['normal']*2})
+        result=prepare('ton_iot',data,2,11)
+        self.assertEqual(result['audit']['rows'],2)
+        self.assertEqual(result['audit']['projection_collision_keys'],1)
+        data.loc[1,'proto']='udp'
+        encoded=prepare('ton_iot',data,2,11)
+        self.assertFalse(np.array_equal(encoded['native'].iloc[0],encoded['native'].iloc[1]))
+
 
 if __name__ == '__main__':
     unittest.main()

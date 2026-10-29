@@ -1,0 +1,165 @@
+{
+  "primary_stages": [
+    {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "revision/code",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 3.938401800001884
+    },
+    {
+      "command": [
+        "revision/code/run_revision.py",
+        "--stage",
+        "all"
+      ],
+      "returncode": 0,
+      "seconds": 1228.1689315000003
+    },
+    {
+      "command": [
+        "revision/code/run_sensitivity.py"
+      ],
+      "returncode": 0,
+      "seconds": 71.53085179999835
+    },
+    {
+      "command": [
+        "revision/code/run_mapping_controls.py"
+      ],
+      "returncode": 0,
+      "seconds": 68.71547250000003
+    },
+    {
+      "command": [
+        "revision/code/run_sensitivity.py",
+        "--statistics-only"
+      ],
+      "returncode": 0,
+      "seconds": 4.060557700002391
+    },
+    {
+      "command": [
+        "revision/code/run_external_xai.py"
+      ],
+      "returncode": 0,
+      "seconds": 89.7902224999998
+    }
+  ],
+  "primary_stages_passed": true,
+  "historical_source_sha256": {
+    "revision/code/data_revision.py": "43cc7068f20bc3c34f9f390aad794c4a7695e1649db4883f30d59defcdbb150f",
+    "revision/code/download_data.py": "41f48d51be48f73460a9e17605c4e0d55bacd7d3771ef7270194ddb0a3e3c2ca",
+    "revision/code/edge_benchmark.py": "c643d9062181462e35c1dc97358ebe3c7d89ac17e6eab5a6b776376d03a7b707",
+    "revision/code/neural_revision.py": "f699c70e0521e83ba2cf06f3d66bad78ad02add28cb55a72aaff02807d6509e5",
+    "revision/code/protocol.py": "a53f4e5ddf390a9fd234baae3ba5d09661f824f1ae610f0e30555e86079388ef",
+    "revision/code/run_all_verified.py": "ab0bf2467b54d686bd7378188266d0855d257039886d976fd361b0818a0169a7",
+    "revision/code/run_external_xai.py": "1a1ca84abb13b487078eb9dddfa78ea3e1d89081e743ab9479eca4474bd00e47",
+    "revision/code/run_mapping_controls.py": "d620bed465fb2b1eb754cd01c31a9f4ccbab649935de70ed96b1eac9c47c0d2b",
+    "revision/code/run_revision.py": "f41fda5d5e572dc4ddb7d51c71a37efd6b13e8b11d2ab9cc23767c16e1702e05",
+    "revision/code/run_sensitivity.py": "e4d39faae6a0c15f3834b3a5eeb14ee82a462d0abd326ae880c077e6682fc65b",
+    "revision/code/test_protocol.py": "c440f21af1b32ea83dcdf8ab292c51b3bd60c1ce38b27423024f8948f69d560c",
+    "revision/code/test_transform.py": "9542b5a6a6a016993bf1c4820c771f1d87fc7b7748e570f9b05804f123a3220b"
+  },
+  "native_protocol_correction": {
+    "proxy_labels_ids_unchanged": true,
+    "before": "43cc7068f20bc3c34f9f390aad794c4a7695e1649db4883f30d59defcdbb150f",
+    "after": "06c3c0ab6c609c6e2d61426ef3a58b04e5d45916b2b890683b2d4a7f753e5f98",
+    "corrected_field": "native TON representation now includes declared protocol encoding; all within controls rerun",
+    "within_returncode": 0
+  },
+  "native_full_control_correction": {
+    "proxy_labels_ids_unchanged": true,
+    "before": "06c3c0ab6c609c6e2d61426ef3a58b04e5d45916b2b890683b2d4a7f753e5f98",
+    "after": "3f5ac500f2bee4089f47448cd2eb40a9bda6ba9e2710f27dcc7e75b297a29224",
+    "corrected_field": "native TON representation now includes declared protocol encoding; all within controls rerun",
+    "within_returncode": 0
+  },
+  "extra_controls": {
+    "source_sha256": "5073f36dc56e9b67de70f7e1659e7975988600074bfa8641b7389a2a59070385",
+    "capture_holdout_completed": true,
+    "baseline_cost_profile_completed": true,
+    "profiling_seed": 42,
+    "primary_detection_metrics_five_seeds": true
+  },
+  "notes": [
+    "Native-only controls were rerun after corrections; external proxy/label/record fingerprints were unchanged.",
+    "The latest native control adds source-fitted low-cardinality categorical encoding.",
+    "Downloader pinning, device instrumentation and the verification driver were subsequently improved without changing fitted detection results.",
+    "Current hashes below identify the public source, not an assertion that the primary run used these later bytes."
+  ],
+  "actual_device_validation": "not yet performed",
+  "current_source_sha256": {
+    "revision/code/data_revision.py": "3f5ac500f2bee4089f47448cd2eb40a9bda6ba9e2710f27dcc7e75b297a29224",
+    "revision/code/native_revision.py": "6d262537fc23dfdc65adbba93d553c6494e9b0ef0ff4356d684035204e4e15d5",
+    "revision/code/download_data.py": "bdb011b7c7c5790e93fd762cca7a9992f92f2a9bc1803fd78ac7c0d820e98ae9",
+    "revision/code/edge_benchmark.py": "93f9afc36fce37f24ecbc8dba6e9fe56b94a681aedca299f641cf52a90a7055e",
+    "revision/code/neural_revision.py": "f699c70e0521e83ba2cf06f3d66bad78ad02add28cb55a72aaff02807d6509e5",
+    "revision/code/protocol.py": "a53f4e5ddf390a9fd234baae3ba5d09661f824f1ae610f0e30555e86079388ef",
+    "revision/code/run_external_xai.py": "1a1ca84abb13b487078eb9dddfa78ea3e1d89081e743ab9479eca4474bd00e47",
+    "revision/code/run_mapping_controls.py": "d620bed465fb2b1eb754cd01c31a9f4ccbab649935de70ed96b1eac9c47c0d2b",
+    "revision/code/run_revision.py": "9939ee57627d5680e63ac9722021b9bb6fe826a35aaa064f99b8c498e8ab28fd",
+    "revision/code/run_sensitivity.py": "e4d39faae6a0c15f3834b3a5eeb14ee82a462d0abd326ae880c077e6682fc65b",
+    "revision/code/test_protocol.py": "8d0e8aa938e4e25af63ac82be8e58f55d04708be9a57484447d2b8496d250a6a",
+    "revision/code/test_transform.py": "1301cdb184694e47d1c66465ae4ff697d581cc267b5709f2177377180fd6d676",
+    "revision/code/postcheck_controls.py": "5073f36dc56e9b67de70f7e1659e7975988600074bfa8641b7389a2a59070385",
+    "revision/code/run_all_verified.py": "a1ebb2ed14213cbb1d3df8d554509a38eaf53e62477257dbd7a92dfbebed54eb",
+    "src/litexids/__init__.py": "c74c48727a1c3ad13213a506c7fe43383d5dcace2b73c0fe763e8d574bd7f618",
+    "src/litexids/data/audit.py": "315ea04995fb0a8bcfc4646b89c56729a07e8c9e6c54f10cee5c7d5a8fe8ef5b",
+    "src/litexids/data/domain_adaptation.py": "712083b56b0b9d92825a10fb18fe4861346f0fb141e7fa95317535f54bb1936b",
+    "src/litexids/data/loading.py": "935d658d965f0624dc52cc4a5d64dad9b29d34218056f7081375f5cc9048a06d",
+    "src/litexids/data/preprocessing.py": "65787d2fb6d8d2dd7e1cc07538f28b0a63a94371fcdf9219688363125eda3ddd",
+    "src/litexids/data/semantic_mapping.py": "c8dee143c59f5faa1d78bc4f8ec92d8b4cf81bf8307cc9f380152f6482fe70f3",
+    "src/litexids/data/__init__.py": "d6b7d1e8ac9e52fcfae876bf23d357e3655c69bb3ad6ba0490705b821834d9dd",
+    "src/litexids/utils/config.py": "cb7412f4dfadcd1b3a57d3e3e273fc807910150d14cbb4a4efdb7db89e44c8de",
+    "src/litexids/utils/__init__.py": "d8181f303b81694e4bf0c959174f669dbdd05a851144738b6ec2801a960dda6c",
+    "revision/config.json": "776d2d3a31415b08739409b7aa493acad04bb9556b2aa8ed560e1358f3e1e88c"
+  },
+  "published_results_sha256": {
+    "within_runs.csv": "d1f642c89b95d92e1c6c51b29fdd18f241766d7ed1a996975f9fe41775fcc35b",
+    "within_summary.csv": "3bca9a172793986fc9cb0be145f6d89d9b178cf364537bdb025c28dcdb6deb13",
+    "within_splits.csv": "cb7b4597cb46569c760eeb27a540f1300f1e45e3ed692595f31319c9ca4a29cd",
+    "cross_runs.csv": "4b5d7002150aeceee8747a4140a5f2b080c3a81fe23c7421241955bdf9dc8358",
+    "cross_summary.csv": "25d7dc1d31c1bcc8cb81a3c851f0238b0213ce824ae2ac1aafe4cd9cbb42628b",
+    "cross_splits.csv": "2b49305ab1670ae9e347d244c4ec32f5b8c551d3abdf8ed13a22010a39c89dab",
+    "selected_cross_runs.csv": "a3fc948df624ff6a10d2deb09493fce5a6973c7cdd27a82f27ff40796b6949e2",
+    "selected_cross_summary.csv": "baa74297235718a1f384e83d64204b8db7e08c040fe37ed8f74030a0ed38d2f0",
+    "source_selection_candidates.csv": "8de3cc01f4d7c807d9e0685464f4996abba2972171394c796decb41bef25b07f",
+    "projection_audit.csv": "f8e1b6204d05f5ea749633e67dc4c29493f8878532bafacd68d3d96cb140dd2d",
+    "feature_mapping.csv": "446deb8258698d460d496981e23ec6702c421b9a29a3f32ff8dba8c6765662ba",
+    "drift_runs.csv": "9f9a8d174b43f862a303e83d32baa4306c2dc67c2c269a704b3ef726bf626b0a",
+    "score_distributions.csv": "e5f290dda24d0044c9c254fdff004574a4b7ed13ce1f62f657f3f2eeb3369ee0",
+    "attack_family_runs.csv": "7d51da87350233dce0739b457ef082019ebb0c0adeb03d780c29a4c6b4729a76",
+    "attack_family_summary.csv": "eeeba83f17e2c98340c93216485abc50c071c611ef1ae9620f0a3ff9464a7a61",
+    "label_taxonomy.csv": "740342985fd71925b30c9c19f6f1a643542cd8cf6cb64886948d2dd89ea1cf02",
+    "mapping_leakage_controls_runs.csv": "edd4cef7dbe357bb096e4042f8b7997235b8ac7e5ce917b9e433069d29c573ec",
+    "mapping_leakage_controls_summary.csv": "9bf60d47c11e7b86b95715f86d659b3c1eb59c594c1ff97f2e174ba78a6ca084",
+    "split_sensitivity_runs.csv": "10f956a3581d2b8f7ff6cde05b1f7dc53c268f8b1dd338b1ac18d82d78e0c8d7",
+    "split_sensitivity_summary.csv": "00dc33fb2d24282565ae6e6a62e56b3b147790f558c3aa22ec50bde5d15f7f88",
+    "paired_tests.csv": "6ff69924abf0fdc2f231f9d3db719f441aaaa2af2b81c7370204ccabbe40c5df",
+    "ul_label_audit.csv": "f70b6c762bfc246bfb8c217d08bc289792281fdf7ce0e0ef01489e4448275296",
+    "compression_runs.csv": "8727ffd33daca4f16a1d186cff5d36d15faaf41b4f425b15d0cf0dd2460cdaab",
+    "compression_summary.csv": "fe0f90a412f1bd4bfe6e07b391ee59fed5aca6a52238c39fdadd8240e7d0669b",
+    "cpu_benchmark_runs.csv": "caa9b82839e70fc853387c0d0678958c23f929ff4e58343e222d8d80e21ed0a6",
+    "cpu_benchmark_summary.csv": "7b64bf18223b5d2f4593fab64942f430b07ccdf8366066e3f25b8a8bc41d0dba",
+    "cpu_parameter_and_format_audit.csv": "c99b671e99f8d3aa8aef7ca94b7b3c2853bd378e9a8937fd532887f2c9b6667d",
+    "external_shap_complete.csv": "af1b66e92bedaf03892fd53463547437ec4f04671f0d762dac8f0783b2a942fa",
+    "shap_source_target_stability.csv": "e3bae6b7c70a465248a80c82a74a5370283716cf5c30700549b81a424dae6680",
+    "shap_between_seed_stability.csv": "deecfb96cda81ee81e1833fdfd606eb4a2311925ddf1f7b4ba1087b5022243e5",
+    "capture_holdout_runs.csv": "8f1e70c5b7d4346544d0c02b9923bacdc30f81861ee9532d1487ca43d346a969",
+    "capture_holdout_summary.csv": "71d58f4cf086e6ead9f45b1c642021c815687b12a75484ae4a6c161cdd81a73f",
+    "baseline_cost_profile_seed42.csv": "2f89b9773c81f41219ce9582a5d657da42cbaa9b0956bdda4df9768b2692718b",
+    "data_manifest.json": "fb4b2c19bda51c829c916efdf5906223bf91cb5c3d81f72f0d707885de381e6f",
+    "download_provenance.json": "4d41aaaba959952a7b551da573022a3dc9cd3eb9e7fafcbb85e3f3146a979f1f",
+    "environment_all.json": "d7095ca63cb6784c9967947004a6edebb575a6049897cfd29178d8696fb6ebef",
+    "environment_within.json": "eb14d51c372b04f89a0cb7156623bfebc645fce155103fdbd189b6b9844e5e23",
+    "environment_compression.json": "5f7cb16aca82526312452fd91c34f33b27f87f75c63610e62d206fdc1fd67947"
+  }
+}

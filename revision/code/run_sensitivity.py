@@ -40,13 +40,16 @@ def grouped():
         pool=load_pool(name)
         for seed in CONFIG['seeds']:
             d=prepare(name,pool,CONFIG['sample_rows_per_dataset'],seed)
-            for mode in ['random_rows_diagnostic','predictor_grouped','source_device_grouped','chronological']:
+            for mode in ['random_rows_diagnostic','predictor_grouped','source_device_grouped','capture_grouped','chronological']:
                 base=dict(dataset=name,seed=seed,split_mode=mode)
                 if mode=='source_device_grouped' and d['device'] is None:
                     rows.append(dict(**base,status='unavailable',reason='mirror has no capture/device identifier'))
                     continue
                 if mode=='chronological' and d['timestamp'] is None:
                     rows.append(dict(**base,status='unavailable',reason='mirror has no timestamp'))
+                    continue
+                if mode=='capture_grouped' and d['capture'] is None:
+                    rows.append(dict(**base,status='unavailable',reason='no genuine capture identifier in the mirror'))
                     continue
                 try:
                     if mode=='random_rows_diagnostic':
@@ -62,7 +65,7 @@ def grouped():
                         train=train[~np.isin(timestamps[train],timestamps[np.r_[cal,test]])]
                         cal=cal[~np.isin(timestamps[cal],timestamps[test])]
                     else:
-                        group=d['device'] if mode=='source_device_grouped' else hashes(d['x'])
+                        group=d['device'] if mode=='source_device_grouped' else d['capture'] if mode=='capture_grouped' else hashes(d['x'])
                         remain,test=group_split(d['x'],d['y'],.2,seed,groups=group)
                         a,b=group_split(d['x'].iloc[remain],d['y'][remain],.15/.8,seed+1,groups=group[remain])
                         train,cal=remain[a],remain[b]

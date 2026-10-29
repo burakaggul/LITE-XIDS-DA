@@ -1,0 +1,457 @@
+[
+  {
+    "path": "data\\raw\\cic_iot_2023\\test-00000-of-00001.parquet",
+    "bytes": 15039323,
+    "sha256": "16eb6b12e6443a270a09a90c08adf90279d0bcb374f2346f143ac069df99ac6b"
+  },
+  {
+    "path": "data\\raw\\cic_iot_2023\\train-00000-of-00001.parquet",
+    "bytes": 60118689,
+    "sha256": "bcc477f125aa7cecbeba50cd3b9641e20dcf521e882c437a704f73c30c96b353"
+  },
+  {
+    "path": "data\\raw\\ton_iot\\train_test_network.csv",
+    "bytes": 29902775,
+    "sha256": "26ddc513552de36de6428b2e578efaed2b57504c716dfba847cc0109a64e1974"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\Bluetooth\\README_Bluetooth_attacks.pdf",
+    "bytes": 113561,
+    "sha256": "9c429f80beaabb5f8823979cf804e210a3844c46f99c3bb51f4284a84ad72f3f"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\Bluetooth\\test\\Bluetooth_Benign_test.pcap",
+    "bytes": 3782333,
+    "sha256": "0a7f608e3cbae4ca07bf14fe72b60d166ef27978c01dc88112f096311b841a47"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\Bluetooth\\test\\Bluetooth_DoS_test.pcap",
+    "bytes": 10070003,
+    "sha256": "c0913f183342f41695530d67a5be230d8e717f45e7f6d1d33ed6b75f661db69d"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\Bluetooth\\train\\Bluetooth_Benign_train.pcap",
+    "bytes": 12000016,
+    "sha256": "671cd2cc987a7f46e13700c17ca94c60a5dcc416f9108b60d3398736e3d32093"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\Bluetooth\\train\\Bluetooth_DoS_train.pcap",
+    "bytes": 40000034,
+    "sha256": "5fa22540e1b213a957f59d6e4d0e6af6c9cd782f9fa3c47cde0a36e68796c121"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\README.pdf",
+    "bytes": 6992913,
+    "sha256": "0ad5283fdc7086d03588c1cdc87f3d430e2ef32969985da51ba538eabc3b68af"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\README_Wifi_and_MQTT_attacks.pdf",
+    "bytes": 138278,
+    "sha256": "fa88de1fcdc39c845e638f91c9b43a12f4341b24aa61e453897d76336c3a34a8"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\ARP_Spoofing_test.pcap.csv",
+    "bytes": 1211227,
+    "sha256": "bb36a2cc3e04bcb66c359d89427ae96c5ddb6a788c87b40257607493351665a1"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\Benign_test.pcap.csv",
+    "bytes": 7698915,
+    "sha256": "ddfe88e38c0355a256cf3a5ffcacfd0f1c244505eeb88c1f636fe8c34b6bdffd"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\MQTT-DDoS-Connect_Flood_test.pcap.csv",
+    "bytes": 84959098,
+    "sha256": "42da9642352d8f7b4ffe150de0026c5808c3d7d7513eec6abfda7c9be8a062e8"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\MQTT-DDoS-Publish_Flood_test.pcap.csv",
+    "bytes": 17165533,
+    "sha256": "aac2b6d9a749dd26d0e20b696ff687e7a64d9093e1431ac05b4a96a88e01a7aa"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\MQTT-DoS-Connect_Flood_test.pcap.csv",
+    "bytes": 6366994,
+    "sha256": "70c2ae142f92ad2293568145f9f43161c1b836cf2b580650386b4aa3f92f38d6"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\MQTT-DoS-Publish_Flood_test.pcap.csv",
+    "bytes": 16945363,
+    "sha256": "7101ed3c0e5a03c2e64982f88fd7b7883386c9622795656354fe5122cb8edbc5"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\MQTT-Malformed_Data_test.pcap.csv",
+    "bytes": 352198,
+    "sha256": "a616332ec581da3e19a4e3154ff5062da214e7813172dbd968c93e0465657012"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\Recon-OS_Scan_test.pcap.csv",
+    "bytes": 690523,
+    "sha256": "9c224ad522b4a07ba3aec75af3311937dba638804572d6105894cbb9a5184008"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\Recon-Ping_Sweep_test.pcap.csv",
+    "bytes": 35913,
+    "sha256": "78aee06ddf24ad24769346bb9d77c26f2e965f8f17452181733c5cb697b37321"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\Recon-Port_Scan_test.pcap.csv",
+    "bytes": 3955194,
+    "sha256": "a4fdc331720863b548a9a0acb8f4aa6a5803e0b9f62811c98d990f1dd0dc6eea"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\Recon-VulScan_test.pcap.csv",
+    "bytes": 202293,
+    "sha256": "6a3b1952701351f8acbb4a7cef2ad6357b4d6259eab350d849439097406bb2e0"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\TCP_IP-DDoS-ICMP1_test.pcap.csv",
+    "bytes": 27988943,
+    "sha256": "ac1b3e99cfebb79fdcb5412107f88c8a0a02c79d22840083763380f2af5c3775"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\TCP_IP-DDoS-ICMP2_test.pcap.csv",
+    "bytes": 35477681,
+    "sha256": "89c41598189fac1b72990cb1a4221ecc6708b4a127cae456d7ed8752efd53cde"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\TCP_IP-DDoS-SYN_test.pcap.csv",
+    "bytes": 32158674,
+    "sha256": "52d2f7bddb983f071d3aa3eb115556bc661c18dd8d0d545bf08fdbd3d03d5b47"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\TCP_IP-DDoS-TCP_test.pcap.csv",
+    "bytes": 33303977,
+    "sha256": "6b5984de81409d4748e5c74a2f64093da14faef336568aad1a4e43ed749d3199"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\TCP_IP-DDoS-UDP1_test.pcap.csv",
+    "bytes": 37486336,
+    "sha256": "b4c3a16d3c7f692db1f9952525ea68c709f7f13a1322da097ad690515544b7fb"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\TCP_IP-DDoS-UDP2_test.pcap.csv",
+    "bytes": 28574990,
+    "sha256": "7acaf0b1b2e7c1096b2e6563ed0119664b8f50336b97ae648794cb749ddd15fa"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\TCP_IP-DoS-ICMP_test.pcap.csv",
+    "bytes": 17934071,
+    "sha256": "90a9f0671da542d24aceb0572e6c7802f5dd9edb9ecc70fd7f8a55b6fc4f8f5a"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\TCP_IP-DoS-SYN_test.pcap.csv",
+    "bytes": 18521140,
+    "sha256": "bd9aa6a0cab3004f10ec375419ff4dce35a36a4c9b203eec5b7bf7ecaedf6b99"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\TCP_IP-DoS-TCP_test.pcap.csv",
+    "bytes": 14971502,
+    "sha256": "7d9e68ba11e8b849fb4ad4b140b2e2186da9dbc1c1142e87dd97f319b55fe9e6"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\test\\TCP_IP-DoS-UDP_test.pcap.csv",
+    "bytes": 25117791,
+    "sha256": "7d9dce1a2c22dd549ec66216a9f3ba629cc878465f750a5626d2343d74ce183e"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\ARP_Spoofing_train.pcap.csv",
+    "bytes": 3244500,
+    "sha256": "5969323dafa34e5e4b694f6fe48bfba5bfe2c217bfae9000c4a381992a0fe4c8"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\Benign_train.pcap.csv",
+    "bytes": 4228600,
+    "sha256": "69c15c9256aa1a8d319dc27fe0c763973d7183d733aba715cb7fe0cd2d80e4c5"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\MQTT-DDoS-Connect_Flood_train.pcap.csv",
+    "bytes": 38092744,
+    "sha256": "ff2dfaacf6e7b80bfbf055eed62c2ea65e714dd384bd4223c27c83f48d0ace5e"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\MQTT-DDoS-Publish_Flood_train.pcap.csv",
+    "bytes": 6092357,
+    "sha256": "6c9871e074776f4ca5ada56f6e0fb4ce366400512089b6151f9e8e229ef5f21b"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\MQTT-DoS-Connect_Flood_train.pcap.csv",
+    "bytes": 2778277,
+    "sha256": "2554c8b9096bca3338f5e35b7c453578b21f3387d7351f086135e9d61b95c379"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\MQTT-DoS-Publish_Flood_train.pcap.csv",
+    "bytes": 9603122,
+    "sha256": "a2e63ef4a0006e73d5dff4f4d8304b941a2bf1d5f23c481a089204776851457f"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\MQTT-Malformed_Data_train.pcap.csv",
+    "bytes": 1022244,
+    "sha256": "e430ea9e88b7af44a64aea7b6996c2ea9dc2bceb7e2a4c0e45704f48be26d942"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\Recon-OS_Scan_train.pcap.csv",
+    "bytes": 3053244,
+    "sha256": "2290076a5ce6517ad207f61b7def237cfedd8690983234da40f1e604ba597633"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\Recon-Ping_Sweep_train.pcap.csv",
+    "bytes": 141311,
+    "sha256": "d6ac6537aff2fcfb013e49a5194d17fa665166cb7f72bb7d484d024a901192df"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\Recon-Port_Scan_train.pcap.csv",
+    "bytes": 14996235,
+    "sha256": "ab445da14e8ac5b8e2588e220a20efde33c0eba1cf8c5d0e331b422f3914be8f"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\Recon-VulScan_train.pcap.csv",
+    "bytes": 414893,
+    "sha256": "4ac5e1df3c3aebe9ee8c18b4214bea6dae23841ce9917b66325d25e08ce5f394"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-ICMP1_train.pcap.csv",
+    "bytes": 35347455,
+    "sha256": "932b19853a5603a668d1cc364258241da894f8c32d0d248ca181ff153b875922"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-ICMP2_train.pcap.csv",
+    "bytes": 35320804,
+    "sha256": "3a3a59a2bf8c74a500becf4353dbaa04741585733cdba761685975e1a8136d7b"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-ICMP3_train.pcap.csv",
+    "bytes": 35753242,
+    "sha256": "6f2ba370956cfd97fceae455ee36ed9252060985b9a9ebcf2525c58a77f52727"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-ICMP4_train.pcap.csv",
+    "bytes": 35745582,
+    "sha256": "e16a4630f257f6b3ec7a5ee626d3d162e42abf065adb44e20407a933069ad4b1"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-ICMP5_train.pcap.csv",
+    "bytes": 35266730,
+    "sha256": "dc104f3760bc7fd9469793fb466a8af50f9274d4e23fc50da97bcc57a9ffc243"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-ICMP6_train.pcap.csv",
+    "bytes": 34672898,
+    "sha256": "3bc9b30588f055807f5a4e940b30e89f7cc3209979a0afd15524406f7e9c41b7"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-ICMP7_train.pcap.csv",
+    "bytes": 33929240,
+    "sha256": "2242d0a7ad58f6d80b62051c835a638a9bb0f037cd51f4dc4f409bfe5c887b64"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-ICMP8_train.pcap.csv",
+    "bytes": 35116820,
+    "sha256": "b016d24c8f8b2c44f9f19d92769fc7fa16ffb5d4cf9a925b6c494b8783f3d38e"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-SYN1_train.pcap.csv",
+    "bytes": 37206498,
+    "sha256": "1e38ea0766127a40d68205685fa8dc41ef0d0c0caa8547392be4c006dc9e0cae"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-SYN2_train.pcap.csv",
+    "bytes": 38059744,
+    "sha256": "439c673527575beba81cbae3e2211ba852fb2808b5c22a3b7fc0019f7dc6ea11"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-SYN3_train.pcap.csv",
+    "bytes": 38027640,
+    "sha256": "e36e826e3917a7a9884959297f5c55ef10e2b288507a52c25517560379302cfc"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-SYN4_train.pcap.csv",
+    "bytes": 36353012,
+    "sha256": "d565271890d348406e00e62288951942322912ff5d5b8f4fadf8056fd76a9b2c"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-TCP1_train.pcap.csv",
+    "bytes": 38254057,
+    "sha256": "4af483ea598a5ee9549be65e67d4e0d8c768d42708bc1af47b4386241cd2d199"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-TCP2_train.pcap.csv",
+    "bytes": 36794268,
+    "sha256": "f1be7e0f76bb30d31ae11ea024b06c8b4512766900a137cb4272bde48fc72df8"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-TCP3_train.pcap.csv",
+    "bytes": 37292795,
+    "sha256": "af0fd3b6ac83b6d1f4660ff18d9e823f4ee66c40067b1e8974ab198d3ad9bb26"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-TCP4_train.pcap.csv",
+    "bytes": 36835840,
+    "sha256": "d79cd6c631ddff7b8777d085602f6a5add3f1005a4839b314e171c7666200e51"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-UDP1_train.pcap.csv",
+    "bytes": 37756370,
+    "sha256": "55f16307c197ad77215254537f43259246cd7e1b2a874dcb9946712ae6471cef"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-UDP2_train.pcap.csv",
+    "bytes": 37772805,
+    "sha256": "984e9c8d079d0ce05b40514e41a53674c79c1900f7b6fef5c85004d6dd6da5bf"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-UDP3_train.pcap.csv",
+    "bytes": 38806051,
+    "sha256": "9b5769dcc120ac1236963d030702728cd97e61bbf2cf3f7e91976f7f8619e89c"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-UDP4_train.pcap.csv",
+    "bytes": 38720044,
+    "sha256": "0d85e8a0a653e31ece277f2e2ab1e8fdda0cdeb80f31386194226c44923e5657"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-UDP5_train.pcap.csv",
+    "bytes": 38045043,
+    "sha256": "7b1ebbfd0b541e4b158cbaae283d879c16f57fc2965d4a2ffb68fdee1cdfdf27"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-UDP6_train.pcap.csv",
+    "bytes": 38129313,
+    "sha256": "d397cc9ae7084391809513032bf9c2caf0692dcda416393455ca8d55f31285f8"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-UDP7_train.pcap.csv",
+    "bytes": 36311102,
+    "sha256": "e126ab0806e097a916d3e7ae9eeeae8578549a45c007352530ba50bbf9ce7af7"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DDoS-UDP8_train.pcap.csv",
+    "bytes": 37326287,
+    "sha256": "1188c92b688e4223ae97377b1d5aac1a8b0bff0a9a6f1ffe9752c4aea71449db"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-ICMP1_train.pcap.csv",
+    "bytes": 20336236,
+    "sha256": "344d5d803ce2c291c756ace36ab39af0b7880db343b696477198bfff4c6b74ac"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-ICMP2_train.pcap.csv",
+    "bytes": 18179331,
+    "sha256": "442ddc0bb0e19bdd60e93dd6e6887118d69d6257bcbe50c1453c5c2de04ffdbb"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-ICMP3_train.pcap.csv",
+    "bytes": 19776393,
+    "sha256": "5a3ebfad5d53ede22146bf65349da8791ead536a6a7a83b2da3fc401d5001a79"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-ICMP4_train.pcap.csv",
+    "bytes": 19719438,
+    "sha256": "28c021a12ff96360a6dfdcd2a881b8c4edb5527bd21812c8aa917625e6223a52"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-SYN1_train.pcap.csv",
+    "bytes": 22584485,
+    "sha256": "49246c0ec96ed46822d9014eb544550131ff26baa947de69086893e33253b9db"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-SYN2_train.pcap.csv",
+    "bytes": 21215739,
+    "sha256": "f028354ea77101dd103821650e95cfff3763623abb0214d9bf30bdb2d6ee9413"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-SYN3_train.pcap.csv",
+    "bytes": 20295512,
+    "sha256": "ea38a9e5c09d887a4099710201beb3949ad943bfe3fb6ca73b93340b296d347e"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-SYN4_train.pcap.csv",
+    "bytes": 20734822,
+    "sha256": "82dc18b3cc3ce65d9e2e150725789334b602fce00f0969d0ca4e598d433bd373"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-TCP1_train.pcap.csv",
+    "bytes": 17478346,
+    "sha256": "095d113ac589f613f7c4a66fec4d327bc126fb1ed7d0be761cd2358b442e3f19"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-TCP2_train.pcap.csv",
+    "bytes": 18284887,
+    "sha256": "a12d609e7e5efa6adb6e5f9b3078f0b485d53b1c126505a67408bf49cd39c901"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-TCP3_train.pcap.csv",
+    "bytes": 17619566,
+    "sha256": "8f85063319a7a879ff1b1ca5f29d912e5ace415b5b6640b266793483528d958a"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-TCP4_train.pcap.csv",
+    "bytes": 17147457,
+    "sha256": "a7a0ab0830bd81407667594f8a673a6b08151fc6ef002e855b7f9f782defb83c"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-UDP1_train.pcap.csv",
+    "bytes": 26005240,
+    "sha256": "6457c8d2ec266aa1249a5d8505e6369c7f6b05c6bd42417768022f2fecd1de60"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-UDP2_train.pcap.csv",
+    "bytes": 25835819,
+    "sha256": "33ac8a5bb80e83850b79adaaafe741f4ba1df24a1e1fd6536f91b8e5e3110dbf"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-UDP3_train.pcap.csv",
+    "bytes": 26832094,
+    "sha256": "6f25192397b9e124a2819933e6cedca418f6a3ebdabc1958f56d0996ef81e6c3"
+  },
+  {
+    "path": "data\\raw\\cic_iomt_2024_original_schema\\Dataset\\WiFI_and_MQTT\\train\\TCP_IP-DoS-UDP4_train.pcap.csv",
+    "bytes": 28410088,
+    "sha256": "06665341230df7eb467cbdb1b17c05fe3ba676ae6f54fa5945995f69a26ef07f"
+  },
+  {
+    "path": "data\\raw\\ul_ece_2025\\dataset.zip",
+    "bytes": 5318117,
+    "sha256": "1208aec8ffeecf0a7e49905bf67c7087433b96d6cc8b906b6e4c33c667e7501c"
+  },
+  {
+    "path": "data\\raw\\ul_ece_2025\\mirzaakhi-UL-ECE-DDoS-H-IoT-Datasets2025-594477e\\MQTT\\.gitkeep",
+    "bytes": 34,
+    "sha256": "caafc84263f98c592e027771d858dd6fadca3ae1327238ee4900b13653d7eb26"
+  },
+  {
+    "path": "data\\raw\\ul_ece_2025\\mirzaakhi-UL-ECE-DDoS-H-IoT-Datasets2025-594477e\\MQTT\\data_preprocessing_ddos_mqtt_cooja.py",
+    "bytes": 4285,
+    "sha256": "191cba09555d1321855ab819541b68a37c29212adecd15e2ce38ad13837b49d5"
+  },
+  {
+    "path": "data\\raw\\ul_ece_2025\\mirzaakhi-UL-ECE-DDoS-H-IoT-Datasets2025-594477e\\MQTT\\UL-ECE-MQTT-DDoS-H-IoT2025-raw.txt",
+    "bytes": 22958597,
+    "sha256": "4167bb2123bcc52fe3903627363dd7616d3b7b9267a1ed1118448a537bdd4101"
+  },
+  {
+    "path": "data\\raw\\ul_ece_2025\\mirzaakhi-UL-ECE-DDoS-H-IoT-Datasets2025-594477e\\MQTT\\UL-ECE-MQTT-DDoS-H-IoT2025.csv",
+    "bytes": 654490,
+    "sha256": "8d2f05b96fe8a63b049ffbd62b69f51fdb1be9569fa9aa2ab545ef160589f797"
+  },
+  {
+    "path": "data\\raw\\ul_ece_2025\\mirzaakhi-UL-ECE-DDoS-H-IoT-Datasets2025-594477e\\README.md",
+    "bytes": 1339,
+    "sha256": "7cb2f5a34f1eaab6ca6911b66371bc647183852fbf2c5c0b3c7abb6991bfb680"
+  },
+  {
+    "path": "data\\raw\\ul_ece_2025\\mirzaakhi-UL-ECE-DDoS-H-IoT-Datasets2025-594477e\\UDP\\.gitkeep",
+    "bytes": 1,
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  {
+    "path": "data\\raw\\ul_ece_2025\\mirzaakhi-UL-ECE-DDoS-H-IoT-Datasets2025-594477e\\UDP\\data_preprocessing_ddos_udp_ns_3.py",
+    "bytes": 7435,
+    "sha256": "74b924a15da5739d80c8f6d9b93f7bb3af5cd7bdf1788f1eb94f1b091ac14cea"
+  },
+  {
+    "path": "data\\raw\\ul_ece_2025\\mirzaakhi-UL-ECE-DDoS-H-IoT-Datasets2025-594477e\\UDP\\UL-ECE-UDP-DDoS-H-IoT2025.csv",
+    "bytes": 14543087,
+    "sha256": "6e0afaf5345360608d2b5e134898c2b4e69f58b634de0afe51f9880ec25645b8"
+  }
+]

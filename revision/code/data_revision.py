@@ -45,16 +45,16 @@ def file_digest(path):
 
 
 def load_pool(name):
-    directory = ROOT/'data'/'raw'/name
+    directory = ROOT/'data'/'raw'/('cic_iomt_2024_original_schema' if name=='cic_iomt_2024' else name)
     suffix = '*.parquet' if name == 'cic_iot_2023' else '*.csv'
     frames = []
-    for path in sorted(directory.glob(suffix)):
+    for path in sorted(directory.rglob(suffix)):
         d = pd.read_parquet(path) if path.suffix == '.parquet' else pd.read_csv(path, low_memory=False)
         d['_uid'] = [f'{path.name}:{i}' for i in range(len(d))]
         d['_capture'] = path.name
         if name == 'cic_iomt_2024':
-            # This mirror has CICFlowMeter rather than the original CIC packet-window schema.
-            d['_attack'] = path.name.replace('_train.pcap_Flow.csv', '')
+            # The source release supplies capture-category files, not per-row verified labels.
+            d['_attack'] = path.name.replace('_train.pcap.csv', '').replace('_test.pcap.csv','')
             d['label'] = int(not path.name.startswith('Benign'))
         else:
             d['_attack'] = d['Label_orig'] if name == 'cic_iot_2023' else d['type']
@@ -86,48 +86,61 @@ def prepare(name, pool, n, seed):
     metadata = {'label', 'Label', 'Label_orig', 'attack_class', 'type', 'Flow ID',
         'Src IP', 'Dst IP', 'Src Port', 'Dst Port', 'Timestamp',
         'src_ip', 'dst_ip', 'src_port', 'dst_port', '_uid', '_capture', '_attack'}
-    raw_predictors = d.drop(columns=[c for c in metadata if c in d])
-    native = raw_predictors.select_dtypes(include='number').astype(float)
+    predictors = d.drop(columns=[c for c in metadata if c in d])
+    native = predictors.copy()
+    if name=='ton_iot':
+        native=native.drop(columns=['proto'])
+        protocol=d['proto'].astype(str).str.lower()
+        native['native_protocol_code']=protocol.map({'tcp':6.,'udp':17.,'icmp':1.}).fillna(0.)
+        for value in ['tcp','udp','icmp']:
+            native['native_protocol_'+value]=protocol.eq(value).astype(float)
     native = native.replace([np.inf, -np.inf], np.nan)
-    # Full native predictor and label duplicates only; mapping collisions are never removed.
-    keep = ~pd.DataFrame({'key': hashes(raw_predictors), 'y': y}).duplicated().to_numpy()
+    original_columns = [c for c in d.columns if not c.startswith('_')]
+    # Identity fields are excluded from models, not from raw-record identity checks.
+    identity_columns = original_columns+(['_capture'] if name=='cic_iomt_2024' else [])
+    keep = ~d[identity_columns].duplicated().to_numpy()
+    label_fields = {'label', 'Label', 'Label_orig', 'attack_class', 'type'}
+    raw_predictors = d[[c for c in original_columns if c not in label_fields]]
+    if name=='cic_iomt_2024':
+        raw_predictors=raw_predictors.assign(capture=d['_capture'])
     d, native, y = d.iloc[keep].reset_index(drop=True), native.iloc[keep].reset_index(drop=True), y[keep]
-    mapped = flowmeter_mapping(d) if name == 'cic_iomt_2024' else build_semantic_features(d,
-        'label', name).drop(columns='label')
+    mapped = build_semantic_features(d,'label',name).drop(columns='label')
     audit = audit_projection(raw_predictors.iloc[keep].reset_index(drop=True), mapped, y)
+    proxy_counts = pd.crosstab(hashes(mapped), y)
+    audit['deterministic_proxy_accuracy_ceiling'] = float(proxy_counts.max(axis=1).sum()/len(y))
     audit.update(dataset=name, seed=seed, sampled=len(keep), removed_exact_native_label_duplicates=int((~keep).sum()),
         benign=int((y == 0).sum()), attack=int((y == 1).sum()))
     return dict(name=name, native=native, x=mapped, y=y, uid=d['_uid'].to_numpy(),
         family=d['_attack'].map(family).to_numpy(), attack=d['_attack'].to_numpy(),
         device=(d['src_ip'].astype(str).to_numpy() if name == 'ton_iot' else
-            d['Src IP'].astype(str).to_numpy() if name == 'cic_iomt_2024' else None),
-        timestamp=(pd.to_datetime(d['Timestamp'], format='%d/%m/%Y %I:%M:%S %p', errors='coerce')
-            if name == 'cic_iomt_2024' else None), audit=audit)
+            d['Src IP'].astype(str).to_numpy() if 'Src IP' in d else None),
+        capture=d['_capture'].to_numpy() if name=='cic_iomt_2024' else None,
+        timestamp=None, audit=audit)
 
 
 MAPPING = [
-    ('duration', 'flow_duration', 'duration', 'Flow Duration / 1e6', 'seconds not established for CIC; proxy'),
-    ('protocol_number', 'Protocol Type (window aggregate)', 'proto -> IANA number', 'Protocol', 'window mean versus flow code; not exact'),
-    ('packet_total', 'Number (window aggregate)', 'src_pkts + dst_pkts', 'Total Fwd Packet + Total Bwd packets', 'window versus bidirectional flow'),
-    ('bytes_total', 'Tot size', 'src_bytes + dst_bytes', 'Total Length of Fwd Packet + Total Length of Bwd Packet', 'CIC Tot size is not a flow byte total'),
-    ('bytes_mean', 'AVG', '(src_bytes+dst_bytes)/(src_pkts+dst_pkts)', 'Packet Length Mean', 'packet/window/flow and payload definitions differ'),
-    ('bytes_min', 'Min', 'min(src_bytes, dst_bytes)', 'Packet Length Min', 'TON is directional total, not packet minimum'),
-    ('bytes_max', 'Max', 'max(src_bytes, dst_bytes)', 'Packet Length Max', 'TON is directional total, not packet maximum'),
-    ('rate', 'Rate', '(src_bytes+dst_bytes)/duration', 'Flow Bytes/s', 'CIC rate and TON byte rate not dimensionally equivalent'),
-    ('tcp', 'TCP (window proportion)', '1[proto=tcp]', '1[Protocol=6]', 'proportion versus flow indicator'),
-    ('udp', 'UDP (window proportion)', '1[proto=udp]', '1[Protocol=17]', 'proportion versus flow indicator'),
-    ('icmp', 'ICMP (window proportion)', '1[proto=icmp]', '1[Protocol=1]', 'proportion versus flow indicator'),
-    ('iat_proxy', 'IAT (original units)', 'duration/(src_pkts+dst_pkts)', 'Flow IAT Mean / 1e6', 'not the same statistic; CIC units not harmonized'),
+    ('duration', 'flow_duration', 'duration', 'unavailable -> 0', 'CIC units not established; missing in IoMT'),
+    ('protocol_number', 'Protocol Type (window aggregate)', 'proto -> IANA number', 'Protocol Type', 'window aggregate versus flow code'),
+    ('packet_total', 'Number (window aggregate)', 'src_pkts + dst_pkts', 'Number', 'different aggregation units/windows'),
+    ('bytes_total', 'Tot size', 'src_bytes + dst_bytes', 'Tot size', 'CIC/IoMT size statistic is not a flow byte total'),
+    ('bytes_mean', 'AVG', '(src_bytes+dst_bytes)/(src_pkts+dst_pkts)', 'AVG', 'window versus flow mean; byte definitions differ'),
+    ('bytes_min', 'Min', 'min(src_bytes, dst_bytes)', 'Min', 'TON directional total, not packet minimum'),
+    ('bytes_max', 'Max', 'max(src_bytes, dst_bytes)', 'Max', 'TON directional total, not packet maximum'),
+    ('rate', 'Rate', '(src_bytes+dst_bytes)/duration', 'Rate', 'packet/window rate versus byte rate'),
+    ('tcp', 'TCP (window proportion)', '1[proto=tcp]', 'TCP', 'window proportion versus flow indicator'),
+    ('udp', 'UDP (window proportion)', '1[proto=udp]', 'UDP', 'window proportion versus flow indicator'),
+    ('icmp', 'ICMP (window proportion)', '1[proto=icmp]', 'ICMP', 'window proportion versus flow indicator'),
+    ('iat_proxy', 'IAT (original units)', 'duration/(src_pkts+dst_pkts)', 'IAT (original units)', 'units/statistic not harmonized; omitted in matched-window control'),
 ]
 
 
 def write_manifest():
     files = []
-    for directory in ['cic_iot_2023', 'ton_iot', 'cic_iomt_2024', 'ul_ece_2025']:
+    for directory in ['cic_iot_2023', 'ton_iot', 'cic_iomt_2024_original_schema', 'ul_ece_2025']:
         for p in sorted((ROOT/'data'/'raw'/directory).rglob('*')):
             if p.is_file():
                 files.append(dict(path=str(p.relative_to(ROOT)), bytes=p.stat().st_size,
                     sha256=file_digest(p)))
     (ROOT/'revision'/'results'/'data_manifest.json').write_text(json.dumps(files, indent=2), encoding='utf-8')
     pd.DataFrame(MAPPING, columns=['mapped_feature','CIC_IoT_2023','TON_IoT',
-        'CICIoMT2024_flow_mirror','comparability_warning']).to_csv(ROOT/'revision'/'results'/'feature_mapping.csv', index=False)
+        'CICIoMT2024_packet_window','comparability_warning']).to_csv(ROOT/'revision'/'results'/'feature_mapping.csv', index=False)

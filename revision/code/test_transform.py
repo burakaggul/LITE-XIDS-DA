@@ -3,9 +3,19 @@ import numpy as np
 import pandas as pd
 from run_revision import Transform
 from protocol import alarm_rule,stable_uniform
+from native_revision import NativeTransform
 
 
 class TransformTests(unittest.TestCase):
+    def test_native_categories_fit_only_on_source_training(self):
+        training=pd.DataFrame({'n':[1.,2.,np.nan],'service':['dns','http','dns']})
+        evaluation=pd.DataFrame({'n':[1e9],'service':['new-unseen-service']})
+        t=NativeTransform().fit(training)
+        categories=t.transformer.named_transformers_['categorical'].categories_[0].copy()
+        t.apply(evaluation)
+        np.testing.assert_array_equal(categories,t.transformer.named_transformers_['categorical'].categories_[0])
+        self.assertNotIn('new-unseen-service',categories)
+
     def test_evaluation_does_not_fit_preprocessing(self):
         train=pd.DataFrame({'a':[1.,2.,np.nan,4.],'b':[0.,1.,2.,3.]})
         adaptation=pd.DataFrame({'a':[10.,20.,30.],'b':[1.,1.,1.]})

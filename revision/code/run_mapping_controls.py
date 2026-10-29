@@ -10,17 +10,24 @@ OUT=ROOT/'revision'/'results'
 
 
 def main():
-    names=['cic_iot_2023','ton_iot']
+    names=['cic_iot_2023','ton_iot','cic_iomt_2024']
     pools={n:load_pool(n) for n in names}
     rows=[]
     for seed in CONFIG['seeds']:
         datasets={n:prepare(n,pools[n],CONFIG['sample_rows_per_dataset'],seed) for n in names}
-        for source_name,target_name in [names,names[::-1]]:
+        pairs=[('cic_iot_2023','ton_iot'),('ton_iot','cic_iot_2023'),
+            ('cic_iot_2023','cic_iomt_2024'),('cic_iomt_2024','cic_iot_2023')]
+        for source_name,target_name in pairs:
             source,target=datasets[source_name],datasets[target_name]
-            for space in ['proxy12','proxy8']:
+            for space in ['proxy12','proxy8','window10']:
                 xs,xt=source['x'].copy(),target['x'].copy()
                 if space=='proxy8':
                     xs=xs.drop(columns=['bytes_min','bytes_max','rate','iat_proxy'])
+                    xt=xt[xs.columns]
+                if space=='window10':
+                    if 'ton_iot' in [source_name,target_name]:
+                        continue
+                    xs=xs.drop(columns=['duration','iat_proxy'])
                     xt=xt[xs.columns]
                 for control in ['predictor_grouped','random_rows_diagnostic']:
                     if control=='predictor_grouped':

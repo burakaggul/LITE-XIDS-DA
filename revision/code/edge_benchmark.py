@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse
 import copy
 import hashlib
+import importlib.metadata
+import io
 import json
 import os
 from pathlib import Path
@@ -12,6 +14,8 @@ import sys
 import time
 import numpy as np
 import psutil
+import joblib
+from scipy.special import expit
 import torch
 from torch import nn
 from torch.nn.utils import prune
@@ -34,23 +38,40 @@ def read_optional(path):
         return None
 
 
+def public_cpuinfo():
+    raw=read_optional('/proc/cpuinfo')
+    if raw is None:
+        return None
+    return '\n'.join(line for line in raw.splitlines() if not line.lower().startswith('serial'))
+
+
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('--artifacts',type=Path,default=Path(__file__).resolve().parent/'artifacts')
     p.add_argument('--output',type=Path,default=Path('device_results.json'))
     p.add_argument('--device-label',required=True,help='For example Raspberry Pi 4 4GB; do not label a desktop as an edge device')
     p.add_argument('--threads',type=int,default=1)
-    p.add_argument('--warmup',type=int,default=200)
-    p.add_argument('--repeats',type=int,default=1000)
+    p.add_argument('--warmup',type=int,default=100)
+    p.add_argument('--repeats',type=int,default=500)
     p.add_argument('--trials',type=int,default=5)
+    p.add_argument('--input-policy',choices=['first','cycle'],default='first')
     args=p.parse_args()
+    if min(args.threads,args.repeats,args.trials)<1 or args.warmup<0:
+        p.error('Positive threads, repeats and trials and nonnegative warmup are required.')
     torch.set_num_threads(args.threads)
     torch.manual_seed(11)
+    manifest=args.artifacts/'SHA256.json'
+    if manifest.exists():
+        for filename,expected in json.loads(manifest.read_text(encoding='utf-8')).items():
+            if hashlib.sha256((args.artifacts/filename).read_bytes()).hexdigest()!=expected:
+                raise ValueError('Artifact hash mismatch: '+filename)
     state=torch.load(args.artifacts/'student_for_edge.pt',map_location='cpu',weights_only=True)
     model=Student(state['input_features'])
     model.load_state_dict(state['state_dict'])
     model.eval()
     data=np.load(args.artifacts/'edge_input.npz')
+    metadata_path=args.artifacts/'training_metadata.json'
+    training_metadata=json.loads(metadata_path.read_text(encoding='utf-8')) if metadata_path.exists() else {}
     x=np.asarray(data['x'],dtype=np.float32)
     models={'student_float':model}
     pruned=copy.deepcopy(model)
@@ -67,13 +88,18 @@ def main():
     models['student_pruned_quantized']=torch.ao.quantization.quantize_dynamic(copy.deepcopy(pruned),{nn.Linear},dtype=torch.qint8)
     teacher=XGBClassifier(n_jobs=args.threads)
     teacher.load_model(args.artifacts/'teacher_for_edge.ubj')
+    teacher.set_params(n_jobs=args.threads)
     models['teacher_xgb']=teacher
     output=dict(device_label=args.device_label,platform=platform.platform(),machine=platform.machine(),
-        cpuinfo=read_optional('/proc/cpuinfo'),device_tree_model=read_optional('/sys/firmware/devicetree/base/model'),
+        cpuinfo=public_cpuinfo(),device_tree_model=read_optional('/sys/firmware/devicetree/base/model'),
         governor=read_optional('/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor'),
         physical_cores=psutil.cpu_count(logical=False),logical_cores=psutil.cpu_count(),
         ram_bytes=psutil.virtual_memory().total,python=sys.version,torch=torch.__version__,
         quantized_engine=torch.backends.quantized.engine,threads=args.threads,
+        software={name:importlib.metadata.version(name) for name in ['numpy','torch','xgboost','scikit-learn','psutil']},
+        input_policy=args.input_policy,source_seed=state.get('seed',training_metadata.get('seed')),
+        training_metadata=training_metadata,
+        trial_scope='Repeated timing trials of one fixed trained artifact; not independent training seeds.',
         scope='batch one model scoring including input tensor construction; no packet capture or feature extraction',
         artifacts={f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in args.artifacts.iterdir() if f.is_file()},
         measurements=[])
@@ -82,11 +108,20 @@ def main():
     for name,net in models.items():
         def predict(sample):
             if isinstance(net,nn.Module):
-                with torch.inference_mode():
-                    logits=net(torch.tensor(sample))
-                    return (logits[:,1]-logits[:,0]).numpy()
-            return net.predict_proba(sample)[:,1]
-        checksum=hashlib.sha256(predict(x).tobytes()).hexdigest()
+                with torch.no_grad():
+                    logits=net(torch.tensor(np.asarray(sample),dtype=torch.float32)).numpy()
+                margin=(logits[:,1]-logits[:,0]).astype(float)
+                return margin,expit(margin),0.
+            probability=net.predict_proba(sample)[:,1]
+            return probability,probability,.5
+        checksum=hashlib.sha256(predict(x)[0].tobytes()).hexdigest()
+        stream=io.BytesIO()
+        if isinstance(net,nn.Module):
+            torch.save(net.state_dict(),stream)
+            size_format='torch state_dict'
+        else:
+            joblib.dump(net,stream,compress=0)
+            size_format='uncompressed joblib'
         for trial in range(args.trials):
             for _ in range(args.warmup):
                 predict(x[:1])
@@ -94,7 +129,8 @@ def main():
             rss_before=psutil.Process().memory_info().rss
             times=[]
             for i in range(args.repeats):
-                sample=x[i%len(x):i%len(x)+1]
+                j=0 if args.input_policy=='first' else i%len(x)
+                sample=x[j:j+1]
                 start=time.perf_counter_ns()
                 predict(sample)
                 times.append((time.perf_counter_ns()-start)/1e6)
@@ -102,6 +138,7 @@ def main():
                 repeats=args.repeats,mean_ms=float(np.mean(times)),p50_ms=float(np.quantile(times,.5)),
                 p95_ms=float(np.quantile(times,.95)),p99_ms=float(np.quantile(times,.99)),
                 throughput_per_second=1000/float(np.mean(times)),rss_before=rss_before,
+                serialized_model_bytes=stream.tell(),size_format=size_format,
                 rss_after=psutil.Process().memory_info().rss,temperature_before=temperature_before,
                 temperature_after=read_optional('/sys/class/thermal/thermal_zone0/temp'),prediction_checksum=checksum))
     args.output.write_text(json.dumps(output,indent=2),encoding='utf-8')

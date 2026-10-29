@@ -1,0 +1,3 @@
+dataset,rows,columns,benign,attack,published_label_rule,rule_label_agreement,use
+UL-ECE-MQTT-DDoS-H-IoT2025,20080,5,8950,11130,frequency >= 5; frequency = 100*total_messages_each_node/total_message,1.0,"label-construction diagnostic, not independent attack ground truth or 12-feature transfer"
+UL-ECE-UDP-DDoS-H-IoT2025,99887,18,47994,51893,monitoring_frequency >= mean_frequency,1.0,"label-construction diagnostic, not independent attack ground truth or 12-feature transfer"

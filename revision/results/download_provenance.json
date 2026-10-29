@@ -1,0 +1,31 @@
+[
+  {
+    "dataset": "cic_iot_2023",
+    "url": "https://huggingface.co/datasets/lacg030175/CIC-IoT-2023-neto-subsample/resolve/049cd63fb1ea66e6d6e285b638ebaf145c6de562/data/train-00000-of-00001.parquet",
+    "path": "data\\raw\\cic_iot_2023\\train-00000-of-00001.parquet",
+    "sha256": "bcc477f125aa7cecbeba50cd3b9641e20dcf521e882c437a704f73c30c96b353"
+  },
+  {
+    "dataset": "cic_iot_2023",
+    "url": "https://huggingface.co/datasets/lacg030175/CIC-IoT-2023-neto-subsample/resolve/049cd63fb1ea66e6d6e285b638ebaf145c6de562/data/test-00000-of-00001.parquet",
+    "path": "data\\raw\\cic_iot_2023\\test-00000-of-00001.parquet",
+    "sha256": "16eb6b12e6443a270a09a90c08adf90279d0bcb374f2346f143ac069df99ac6b"
+  },
+  {
+    "dataset": "ton_iot",
+    "url": "https://huggingface.co/datasets/codymlewis/TON_IoT_network/resolve/b953d9388d2db3bc392ea7150476e4f219a2a1cb/train_test_network.csv",
+    "path": "data\\raw\\ton_iot\\train_test_network.csv",
+    "sha256": "26ddc513552de36de6428b2e578efaed2b57504c716dfba847cc0109a64e1974"
+  },
+  {
+    "dataset": "CICIoMT2024",
+    "url": "https://www.kaggle.com/api/v1/datasets/download/outstandard09/ciciomt2024?datasetVersionNumber=1",
+    "sha256": "7903996f5861881000df917ee77814f27ed4330610b487a93f1b4adce03b72bb",
+    "labels": "capture categories encoded by published filenames, not independently verified row labels"
+  },
+  {
+    "dataset": "UL-ECE-DDoS-H-IoT2025",
+    "url": "https://zenodo.org/api/records/15305814/files/mirzaakhi/UL-ECE-DDoS-H-IoT-Datasets2025-v1.0.0.zip/content",
+    "sha256": "1208aec8ffeecf0a7e49905bf67c7087433b96d6cc8b906b6e4c33c667e7501c"
+  }
+]

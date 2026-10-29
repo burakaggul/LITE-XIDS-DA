@@ -1,0 +1,57 @@
+{
+  "python": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "processor": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "physical_cores": 24,
+  "logical_cores": 32,
+  "ram_bytes": 68405403648,
+  "cpu_threads": 4,
+  "cpu_model": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "packages": {
+    "numpy": "2.3.2",
+    "pandas": "3.0.1",
+    "sklearn": "1.8.0",
+    "scipy": "1.17.1",
+    "shap": "0.54.1",
+    "xgboost": "3.2.0",
+    "lightgbm": "4.6.0",
+    "torch": "2.10.0+cpu"
+  },
+  "config": {
+    "seeds": [
+      11,
+      23,
+      42,
+      67,
+      89
+    ],
+    "sample_rows_per_dataset": 30000,
+    "source_calibration_fraction_of_all_source_rows": 0.15,
+    "target_evaluation_fraction": 0.5,
+    "alarm_budgets": [
+      0.001,
+      0.005,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.2,
+      0.5,
+      0.8
+    ],
+    "cpu_threads": 4,
+    "neural_epochs": 20,
+    "distillation_temperature": 3.0,
+    "distillation_alpha_hard": 0.25,
+    "benchmark_warmup": 100,
+    "benchmark_repetitions": 500,
+    "selection_rule": "source calibration macro F1 then balanced accuracy then complexity then lexical identifier",
+    "alarm_rule": "raw margins when available and randomized boundary ties; empirical budget in expectation on adaptation data only",
+    "status": "revision in progress; not submission ready"
+  },
+  "command": [
+    "revision/code/run_revision.py",
+    "--stage",
+    "compression"
+  ]
+}

@@ -1,0 +1,16 @@
+rows,native_unique_predictors,mapped_unique_predictors,native_predictor_duplicate_rows,mapped_duplicate_rows,mapped_label_conflict_keys,mapped_label_conflict_rows,projection_collision_keys,resolution,deterministic_proxy_accuracy_ceiling,dataset,seed,sampled,removed_exact_native_label_duplicates,benign,attack
+29969,29969,29963,0,12,0,0,6,retain distinct native records; group identical mapped predictors before splitting,1.0,cic_iot_2023,11,30000,31,4125,25844
+28418,28418,14452,0,14900,5,6852,934,retain distinct native records; group identical mapped predictors before splitting,0.9980997959040045,ton_iot,11,30000,1582,6016,22402
+29473,29473,26327,0,5665,0,0,2519,retain distinct native records; group identical mapped predictors before splitting,1.0,cic_iomt_2024,11,30000,527,206,29267
+29955,29955,29946,0,18,0,0,9,retain distinct native records; group identical mapped predictors before splitting,1.0,cic_iot_2023,23,30000,45,4269,25686
+28303,28303,14408,0,14789,3,6764,894,retain distinct native records; group identical mapped predictors before splitting,0.9979154153269971,ton_iot,23,30000,1697,6141,22162
+29448,29448,26166,0,5928,0,0,2646,retain distinct native records; group identical mapped predictors before splitting,1.0,cic_iomt_2024,23,30000,552,191,29257
+29960,29960,29959,0,2,0,0,1,retain distinct native records; group identical mapped predictors before splitting,1.0,cic_iot_2023,42,30000,40,4129,25831
+28252,28252,14297,0,14842,3,730,887,retain distinct native records; group identical mapped predictors before splitting,0.9984425881353532,ton_iot,42,30000,1748,5950,22302
+29429,29429,26183,0,5847,0,0,2601,retain distinct native records; group identical mapped predictors before splitting,1.0,cic_iomt_2024,42,30000,571,176,29253
+29952,29952,29948,0,8,0,0,4,retain distinct native records; group identical mapped predictors before splitting,1.0,cic_iot_2023,67,30000,48,4221,25731
+28420,28420,14352,0,14975,4,6936,907,retain distinct native records; group identical mapped predictors before splitting,0.997853624208304,ton_iot,67,30000,1580,5950,22470
+29415,29415,26154,0,5874,0,0,2613,retain distinct native records; group identical mapped predictors before splitting,1.0,cic_iomt_2024,67,30000,585,207,29208
+29965,29965,29962,0,6,0,0,3,retain distinct native records; group identical mapped predictors before splitting,1.0,cic_iot_2023,89,30000,35,4122,25843
+28398,28398,14290,0,15047,4,6980,939,retain distinct native records; group identical mapped predictors before splitting,0.9983801676174379,ton_iot,89,30000,1602,6020,22378
+29512,29512,26316,0,5753,0,0,2557,retain distinct native records; group identical mapped predictors before splitting,1.0,cic_iomt_2024,89,30000,488,199,29313

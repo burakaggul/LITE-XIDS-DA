@@ -30,6 +30,7 @@ from protocol import (group_split, hashes, metrics, source_threshold, select_on_
     alarm_rule, conservative_alarm_predict, summaries)
 from data_revision import ROOT, load_pool, prepare, write_manifest
 from neural_revision import train_neural, scores as neural_scores
+from native_revision import NativeTransform
 
 sys.path.insert(0, str(ROOT/'src'))
 from litexids.data.domain_adaptation import fit_coral, apply_coral
@@ -174,11 +175,11 @@ def within(pools, seeds, n):
             for label, idx in [('train', train), ('calibration', cal), ('test', test)]:
                 splits.append(dict(dataset=name, seed=seed, split=label, n=len(idx),
                     benign=int((d['y'][idx] == 0).sum()), attack=int(d['y'][idx].sum())))
-            for space in ['native_numeric', 'proxy12', 'proxy8']:
-                x = d['native'] if space == 'native_numeric' else d['x']
+            for space in ['native_full', 'proxy12', 'proxy8']:
+                x = d['native'] if space == 'native_full' else d['x']
                 if space == 'proxy8':
                     x = x.drop(columns=['bytes_min', 'bytes_max', 'rate', 'iat_proxy'])
-                transform = Transform('baseline').fit(x.iloc[train])
+                transform = NativeTransform().fit(x.iloc[train]) if space=='native_full' else Transform('baseline').fit(x.iloc[train])
                 a, b, c = [transform.apply(x.iloc[idx], source=True) for idx in [train, cal, test]]
                 for kind in ['lr', 'rf', 'xgb', 'lgbm']:
                     model = fit(kind, a, d['y'][train], b, d['y'][cal], seed)
@@ -186,7 +187,7 @@ def within(pools, seeds, n):
                     cutoff = source_threshold(d['y'][cal], score_cal)
                     s, p, _ = get_scores(model, c)
                     rows.append(dict(dataset=name, seed=seed, space=space, model=kind,
-                        threshold=cutoff, features=x.shape[1], train_n=len(a), test_n=len(c),
+                        threshold=cutoff, features=a.shape[1], train_n=len(a), test_n=len(c),
                         **metrics(d['y'][test], (s >= cutoff).astype(int), s, p)))
                 write(rows, 'within_runs.csv')
             print(f'within {name} seed={seed}', flush=True)
@@ -217,7 +218,7 @@ def explain(model, transform, train, cal, target, base, rows):
 
 
 def cross(pools, seeds, n):
-    rows, selected_rows, split_rows, drift_rows, shap_rows, score_rows, family_rows = [], [], [], [], [], [], []
+    rows, selected_rows, split_rows, drift_rows, shap_rows, score_rows, family_rows, candidate_rows = [], [], [], [], [], [], [], []
     for seed in seeds:
         datasets = {name: prepare(name, pools[name], n, seed) for name in DATASETS}
         for source_name in DATASETS:
@@ -254,6 +255,9 @@ def cross(pools, seeds, n):
                         cache[key] = (model, transform, a, b, u, e, s_cal, cutoff, default)
                 # Selection occurs before target evaluation labels enter any metric calculation.
                 winner = select_on_source(candidates)
+                for candidate in candidates:
+                    candidate_rows.append(dict(source=source_name,target=target_name,seed=seed,
+                        **candidate,selected=candidate['id']==winner))
                 for key, item in cache.items():
                     model, transform, a, b, u, e, s_cal, cutoff, default = item
                     kind, variant = key.split('/')
@@ -305,7 +309,8 @@ def cross(pools, seeds, n):
                         joblib.dump(dict(model=model, x=e[:100], y=target['y'][eval_idx][:100]), OUT/'edge_reference.joblib')
                 for records, filename in [(rows,'cross_runs.csv'), (selected_rows,'selected_cross_runs.csv'),
                     (shap_rows,'external_shap.csv'), (family_rows,'attack_family_runs.csv'),
-                    (score_rows,'score_distributions.csv'), (split_rows,'cross_splits.csv'), (drift_rows,'drift_runs.csv')]:
+                    (score_rows,'score_distributions.csv'), (split_rows,'cross_splits.csv'), (drift_rows,'drift_runs.csv'),
+                    (candidate_rows,'source_selection_candidates.csv')]:
                     write(records, filename)
                 print(f'cross {source_name} -> {target_name} seed={seed} winner={winner}', flush=True)
     frame = pd.DataFrame(rows)
