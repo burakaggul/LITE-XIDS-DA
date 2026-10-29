@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-29T22:13:49.867820+00:00",
+  "checked_utc": "2026-10-29T22:19:46.214783+00:00",
   "steps": [
     {
       "step": "Pinned real raw data",
@@ -24,6 +24,12 @@
       "status": "verified",
       "evidence": "manifests/official_event_sources.json",
       "note": "Point timestamps do not acquire fabricated durations or implicit benign labels."
+    },
+    {
+      "step": "Worst-coverage PCAP compared with its official source",
+      "status": "verified",
+      "evidence": "results/official_scanning_source_authenticity.json",
+      "note": "Full SHA256 identity verified only for normal_scanning6.pcap; not an authenticity claim for all other mirrored captures."
     },
     {
       "step": "Common label quality gate",

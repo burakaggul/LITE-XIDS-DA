@@ -62,6 +62,10 @@ Of 41,621 unresolved sampled flows, 32,972 have no matching tuple in any of the
 41 annotation tables at any timestamp. Common training, common final evaluation,
 and common LR/RF/XAI controls therefore remain unexecuted. Missing events are not
 assigned benign labels and low-coverage final captures are not silently dropped.
+The worst-coverage capture, `normal_scanning6.pcap`, was independently streamed
+from the official author-hosted folder and its complete SHA256 equals the pinned
+mirror object. This one-file authenticity check does not authenticate every other
+mirrored capture or resolve absent flow annotations.
 
 The separate historical diagnostic completes five-seed source-only cost-sensitive
 teacher/student experiments, 80 matched-cost component controls, matched-backend

@@ -27,6 +27,11 @@ def run():
         'results/prepared_audit.json','Observational identity is not proof of packet-byte identity or independent acquisition sessions.')
     add('Author-hosted event annotation import','verified' if read('official_event_integrity.json') else 'not_executed',
         'manifests/official_event_sources.json','Point timestamps do not acquire fabricated durations or implicit benign labels.')
+    official_capture=read('official_scanning_source_authenticity.json')
+    add('Worst-coverage PCAP compared with its official source',
+        'verified' if official_capture and official_capture['full_byte_identity'] else 'not_verified',
+        'results/official_scanning_source_authenticity.json',
+        'Full SHA256 identity verified only for normal_scanning6.pcap; not an authenticity claim for all other mirrored captures.')
     add('Common label quality gate','passed' if data['quality_gate_passed'] else 'failed',
         'manifests/common_dataset.json',f"Observed coverage {data['ton_label_coverage']:.6%}; required 95%; not classifier accuracy.")
     for track in ['legacy','common']:

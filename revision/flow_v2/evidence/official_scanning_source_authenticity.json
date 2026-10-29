@@ -1,0 +1,9 @@
+{
+  "capture_id": "ton_iot:normal_scanning6.pcap",
+  "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/Raw_datasets/network_data/Network_dataset_pcaps/normal_attack_pcaps/normal_scanning/normal_scanning6.pcap?download=1",
+  "official_bytes": 479811584,
+  "official_sha256": "6c36fd8cf7d547841191ca9d78b2cc66a577046cc3168bbf4ee4880441b10f9d",
+  "pinned_mirror_sha256": "6c36fd8cf7d547841191ca9d78b2cc66a577046cc3168bbf4ee4880441b10f9d",
+  "full_byte_identity": true,
+  "scope": "Only this worst-coverage capture is independently authenticated against the author-hosted file; other mirrored captures retain their provenance limitation."
+}
