@@ -30,7 +30,9 @@ CIC labels inherit the published capture category, not independent per-packet
 verification. TON labels require the same orientation-invariant tuple, unanimous
 overlapping binary labels and full time support from their interval union, with
 a fixed 1s timestamp tolerance. Unsupported/conflicting flows remain unknown.
-At least 95 percent overall TON label coverage is required before training.
+At least 95 percent overall TON label coverage is required before primary
+full-traffic training; the separately registered conditional diagnostic below
+does not override that failed gate.
 The initial 23-table join failed this gate (93.6348 percent); that failed data
 snapshot is retained in archive/pre_official_annotations. The official public
 UNSW SharePoint folder was subsequently accessible through the browser and its
@@ -80,8 +82,9 @@ full known-label subtype errors, and descriptive PDP. Correlated/derived feature
 permit off-manifold perturbations. Explanations are not causal attack evidence.
 
 DESKTOP AND DEVICE SCOPE
-CPU measurements concern completed-flow model inference and preprocessing plus
-inference. Packet capture, flow construction and the 30/120s aggregation delays
+CPU measurements state whether they include preprocessing or model inference
+only. The conditional-v3 matched profiles are model-only. Packet capture,
+flow construction and the 30/120s aggregation delays
 are excluded. Process RSS includes Python/frameworks and cached artifacts; it is
 not isolated model memory. Desktop timings are not Raspberry Pi/Jetson evidence.
 Actual school-device tests are deferred and must not be described as completed.
@@ -127,6 +130,51 @@ Do not treat archived exploratory outputs as corrected common-flow results.
 ablate_common.py --track legacy, matched_cpu.py --track legacy, and
 explain_legacy.py provide separately named posthoc diagnostic analyses of the
 frozen historical models. They are not raw-flow or independent new test evidence.
+
+CONDITIONAL RAW DIAGNOSTIC V3
+The original full-traffic study remains stopped. Versioned IPv6/ICMP key
+normalization recovers 437 retained labels. Packet-label witnesses independently
+reconstruct native packet counts, bytes, timing, flags and UID; 6,645 of 6,742
+empty-time-gap candidates pass. Ninety-seven rejected candidates remain unknown.
+There are three quarantined incomplete tails, including injection_normal4; its
+re-extracted flow values are unchanged after complete-record normalization.
+Coverage is 94.71785699 percent, with 34,539 unknown outcomes. The unchanged
+95-percent primary gate remains failed.
+
+The separate labeled_raw_v3 study was registered before common-model scores.
+It estimates conditional performance among traceably supported sampled flows,
+not all traffic. All source/seed models freeze before final evaluation. Unknown
+labels never enter training or selection. Missing-label identification bounds
+permit every possible class assignment, including nonrandom missingness, and
+must accompany conditional scores. These bounds are not confidence intervals.
+Original interval-only provenance strings in the frozen snapshot predate packet
+witnesses; documentation_receipt.json explicitly clarifies the 6,645 witnessed
+flows without modifying frozen data or model artifacts.
+
+After the documented downloads, original indexes, official-event import and
+Linux extraction, run the versioned schema and packet inspection stages:
+
+  python revision/flow_v2/label_flows.py --stage prepare --official-events
+    [Expected exit 3 when the unchanged full-traffic coverage gate fails.]
+  python revision/flow_v2/label_schema_v3.py
+  python revision/flow_v2/label_flows.py --stage prepare --official-events --label-schema v3
+    [Expected exit 3; this prepares the versioned unresolved cohort.]
+  python revision/flow_v2/packet_label_witness.py --prepare
+  python revision/flow_v2/resume_packet_witnesses_v3.py   [Linux runtime]
+  python revision/flow_v2/run_labeled_revision_v3.py      [Windows ML runtime]
+
+Inspect each script's --help and configured paths. The author's WSL helper
+uses a user-local environment and mirror/cache paths; replace these for a new
+installation rather than treating the author's machine layout as portable.
+run_labeled_revision_v3.py accepts only the documented code-3 failed primary
+coverage gate before registering the conditional study; other failures stop it.
+Do not reuse author evidence snapshots as a new run's data/model freeze.
+
+The completed study has 480 primary policy rows, 80 matched-cost component
+rows and 560 missing-outcome-bound rows, independently audited. Five-seed
+source-limit-0.01 KD external recall is 0.0659 (CIC-to-TON) and 0.1133
+(TON-to-CIC); these are not successful transfer results. Smaller INT8 artifacts
+do not establish faster inference. Actual-device measurements remain absent.
 
 Only load author-generated model artifacts after checking their frozen hashes.
 Do not publish raw traffic, original label tables, peer-review correspondence,

@@ -1,0 +1,16 @@
+{
+  "policies": 480,
+  "matched_component_rows": 80,
+  "seeds": [
+    11,
+    23,
+    42,
+    67,
+    89
+  ],
+  "source_manifest_sha256": "4518c38e99da81dbce5573359fec44e25823e3abd8e88c59749b8cd9c7531160",
+  "study_manifest_sha256": "0b81d2ec6270b78443f5ee69072ddf1cdfd004e1ae8ef5ca960d72f35336dce7",
+  "conditional_labeled_subcohort_only": true,
+  "unknown_labels_imputed": false,
+  "original_full_traffic_quality_gate_passed": false
+}

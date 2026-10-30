@@ -1,0 +1,7 @@
+dataset,role,rows,benign,attack,capture_files,observational_overlap_rows_excluded,projected_duplicate_rows
+cic_iot_2023,final,68002,30000,38002,4,0,47471
+cic_iot_2023,calibration,94021,30000,64021,4,0,70404
+cic_iot_2023,train,183087,60000,123087,11,0,138680
+ton_iot,final,123529,1743,121786,5,0,89869
+ton_iot,calibration,100626,11368,89258,5,0,61048
+ton_iot,train,384621,59006,325615,15,10569,223710

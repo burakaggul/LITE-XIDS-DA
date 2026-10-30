@@ -15,6 +15,10 @@ from features import FEATURES
 PROTOCOL={'tcp':6,'udp':17,'icmp':1,'icmp6':58,'ipv6-icmp':58}
 
 
+class LabelCoverageError(RuntimeError):
+    pass
+
+
 def canonical_keys(frame,raw=False):
     protocol=frame['proto'].astype(str).str.lower().map(PROTOCOL) if raw else pd.to_numeric(frame['protocol_number'])
     src=pd.to_numeric(frame['src_port'],errors='coerce').fillna(-1).astype('int64')
@@ -71,13 +75,18 @@ def index_source(row):
     log(f'LABEL INDEX PASS {row["path"]}: {count:,} original label intervals, {bad:,} invalid-time rows excluded')
 
 
-def join_labels(flows,files,tolerance):
+def join_labels(flows,files,tolerance,schema='v1'):
     con=duckdb.connect()
     con.execute("SET threads=4")
     con.execute("SET memory_limit='8GB'")
     con.execute("SET temp_directory='"+str(HERE/'cache/duckdb').replace('\\','/').replace("'","''")+"'")
     meta=flows[['flow_uid','first_ms','last_ms']].copy()
     meta['key']=canonical_keys(flows).to_numpy()
+    if schema=='v3':
+        from label_schema_v3 import normalize_keys
+        meta['key']=normalize_keys(meta['key'])
+    elif schema!='v1':
+        raise ValueError('Unknown annotation tuple schema.')
     meta=meta.drop_duplicates('flow_uid')
     con.register('f',meta)
     query='''WITH labels AS (SELECT * FROM read_parquet(?)),
@@ -113,7 +122,7 @@ def join_labels(flows,files,tolerance):
     return answer
 
 
-def prepare(official_events=False):
+def prepare(official_events=False,label_schema='v1',packet_witnesses=False):
     config=json.loads((HERE/'config.json').read_text())
     plan=json.loads((HERE/'manifests/capture_plan.json').read_text())
     frames=[]
@@ -142,8 +151,51 @@ def prepare(official_events=False):
                 raise RuntimeError('An official event annotation file changed.')
             files.append(path)
         log('LABEL JOIN AMENDMENT: 18 author-hosted point-event tables added; exact timestamps only, no event duration inferred')
+    schema_manifest=None
+    if label_schema=='v3':
+        schema_manifest=HERE/'manifests/label_schema_v3.json'
+        normalized=json.loads(schema_manifest.read_text())
+        if not normalized['complete']:
+            raise RuntimeError('Normalized annotation indexes are incomplete.')
+        replacement={row['input']:row for row in normalized['files']}
+        normalized_files=[]
+        for path in files:
+            row=replacement[str(path.relative_to(HERE)).replace('\\','/')]
+            output=HERE/row['output']
+            if digest(path)!=row['input_sha256'] or digest(output)!=row['output_sha256']:
+                raise RuntimeError('A normalized annotation index changed.')
+            normalized_files.append(output)
+        files=normalized_files
+        log('LABEL TUPLE SCHEMA V3: literal IP normalization and address-family-aware ICMP; labels and timestamps retained')
     log('LABEL JOIN START: exact tuple + full union time support + unanimous overlapping binary labels; no filename labels for TON')
-    answer=join_labels(ton,files,config['label_clock_tolerance_seconds'])
+    answer=join_labels(ton,files,config['label_clock_tolerance_seconds'],schema=label_schema)
+    witness_manifest=None;witness_recovered=0
+    if packet_witnesses:
+        if label_schema!='v3':
+            raise RuntimeError('Packet certificates require normalized annotation schema v3.')
+        witness_manifest=HERE/'results/all_packet_witnesses_v3.json'
+        witness=json.loads(witness_manifest.read_text())
+        if not witness['complete']:
+            raise RuntimeError('Not all packet-certificate captures were checked.')
+        certificates=[]
+        for row in witness['captures']:
+            path=HERE/row['csv']
+            if digest(path)!=row['csv_sha256']:
+                raise AssertionError('A packet certificate changed.')
+            certificates.append(pd.read_csv(path))
+        certified=pd.concat(certificates,ignore_index=True)
+        certified=certified[certified.certified].set_index('flow_uid')
+        if certified.index.duplicated().any():
+            raise AssertionError('Duplicate flow certificates.')
+        mask=answer.flow_uid.isin(certified.index)
+        labels=answer.loc[mask,'flow_uid'].map(certified.witnessed_label).astype(int)
+        original=answer.loc[mask]
+        if original.joined_label.notna().any() or not original.label_match_status.eq('unsupported_time_gap').all() or not original.min_label.eq(labels).all() or not original.max_label.eq(labels).all():
+            raise AssertionError('A packet certificate does not match its original unanimous class support.')
+        answer.loc[mask,'joined_label']=labels
+        answer.loc[mask,'label_match_status']='packet_witness_supported'
+        witness_recovered=int(mask.sum())
+        log(f'PACKET CERTIFICATES APPLIED: {witness_recovered:,} flows; native packet counts, bytes, timestamps and fingerprint independently matched')
     ton=ton.drop(columns=['label','attack']).merge(answer,on='flow_uid',how='left',validate='many_to_one')
     ton['label']=ton.joined_label
     ton['attack']=ton.matched_types.fillna('unknown')
@@ -187,18 +239,23 @@ def prepare(official_events=False):
         unknown_labels_excluded=len(unknown),test_performance_inspected=False,partitions=counts,
         official_event_sources_sha256=digest(official_manifest) if official_manifest else None,
         annotation_amendment_sha256=digest(HERE/'manifests/official_annotation_amendment.json') if official_events else None,
+        label_schema_version=label_schema,label_schema_manifest_sha256=digest(schema_manifest) if schema_manifest else None,
+        packet_witness_manifest_sha256=digest(witness_manifest) if witness_manifest else None,
+        packet_witness_recovered=witness_recovered,
         duplicate_identity_limitation='Orientation-invariant native endpoints, times, directional counters and all common statistics; packet-byte identity and acquisition-session independence are not established'))
     if not quality:
-        raise RuntimeError('TON label coverage below predeclared quality requirement; do not call common-flow evaluation confirmatory.')
+        raise LabelCoverageError('TON label coverage below predeclared quality requirement; do not call common-flow evaluation confirmatory.')
     log('PASS common data prepared; final labels remain outside model-selection APIs')
 
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--stage',choices=['index','prepare'],required=True);p.add_argument('--watch',action='store_true')
     p.add_argument('--official-events',action='store_true')
+    p.add_argument('--label-schema',choices=['v1','v3'],default='v1')
+    p.add_argument('--packet-witnesses',action='store_true')
     a=p.parse_args()
     if a.stage=='prepare':
-        prepare(a.official_events);return
+        prepare(a.official_events,a.label_schema,a.packet_witnesses);return
     plan=json.loads((HERE/'manifests/capture_plan.json').read_text())
     pending=[r for r in plan['files'] if r['kind']=='labels']
     while pending:
@@ -213,4 +270,8 @@ def main():
 
 
 if __name__=='__main__':
-    main()
+    try:
+        main()
+    except LabelCoverageError as error:
+        log('DECLARED LABEL QUALITY GATE FAILED: '+str(error))
+        raise SystemExit(3)

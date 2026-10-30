@@ -22,3 +22,6 @@ device_results*.json
 /revision/flow_v2/manifests/training_protocol*.json
 /revision/flow_v2/manifests/common*.json
 /revision/flow_v2/manifests/official*.json
+/revision/flow_v2/label_index_v3/
+/revision/flow_v2/official_event_index_v3/
+/revision/flow_v2/labeled_raw_v3/

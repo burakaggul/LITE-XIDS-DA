@@ -90,6 +90,15 @@ def normalize(source,output):
         normalized=Path(old['normalized_path'])
         if old['version']!=VERSION or old['source_sha256']!=sha or not normalized.exists() or digest(normalized)!=old['normalized_sha256']:
             raise RuntimeError('Chronology cache/source integrity mismatch.')
+        if 'cut short in the middle of a packet' in old.get('tool_stderr','').lower() and not old.get('structural_validation'):
+            archived=meta.with_suffix('.legacy-pre-tail-audit.json')
+            if not archived.exists():
+                shutil.copy2(meta,archived)
+            repaired=normalize(source,output.with_name(output.stem+'-complete-records-v3.pcap'))
+            repaired['legacy_proof_sha256']=digest(archived)
+            save(meta,repaired)
+            log('LEGACY TRUNCATION CACHE REPAIRED '+source.name+': original proof archived, raw source unchanged')
+            return repaired
         return old
     output.parent.mkdir(parents=True,exist_ok=True)
     tool,env=executable();temporary=output.with_suffix('.reordering')

@@ -1,0 +1,14 @@
+{
+  "probability_shap_rows": 480,
+  "explained_source_model_bundles": 20,
+  "local_additivity_max_residual": 9.249562227253705e-10,
+  "domain_rank_pairs": 20,
+  "seed_rank_pairs": 80,
+  "fixed_queries_per_domain": 64,
+  "source_training_background_only": true,
+  "source_selected_policies_only": true,
+  "matched_backend_cpu_profiles": 20,
+  "real_device_measured": false,
+  "interpretation": "Permutation SHAP and 1D/2D brute-force PDP are descriptive; correlated/derived features can yield off-manifold perturbations. No causal interpretation or deployment-wide explanation quality is claimed.",
+  "code_sha256": "1451eba2a54ed08fdda37071e785536c8a6854311db73a9eb757fe595b76e4de"
+}

@@ -1,0 +1,232 @@
+{
+  "captures": [
+    {
+      "capture_id": "ton_iot:MITM_normal1.pcap",
+      "csv": "results/packet_witness_v3/7ff716caffe2821a6a64.csv",
+      "csv_sha256": "7a71e48609a8d3bf340c2ac9edd898428bf60b741cadea1c923d8740881f136a",
+      "metadata": "results/packet_witness_v3/7ff716caffe2821a6a64.json",
+      "metadata_sha256": "3cbf6f4376cdb6bcc5abb7281dc4c0134844acad3ece09010332d2a08c79c528",
+      "candidates": 34,
+      "certified": 19
+    },
+    {
+      "capture_id": "ton_iot:MITM_normal4.pcap",
+      "csv": "results/packet_witness_v3/95143628d48665283628.csv",
+      "csv_sha256": "835871f3fa5cf90a5dd61690a6481eeb9e45ca6420f17678c9480c01af768a7d",
+      "metadata": "results/packet_witness_v3/95143628d48665283628.json",
+      "metadata_sha256": "dd6b07ad37ec3ae40d0b08e3748f07a0d2abe9799d0e89adca6790c3c398c307",
+      "candidates": 14,
+      "certified": 6
+    },
+    {
+      "capture_id": "ton_iot:injection_normal1.pcap",
+      "csv": "results/packet_witness_v3/33f44a82ce65c2d530b5.csv",
+      "csv_sha256": "d252b14e2604c01d9c4ba3314a9101261f9fecdb675a38d7c4a5ff0985d3c802",
+      "metadata": "results/packet_witness_v3/33f44a82ce65c2d530b5.json",
+      "metadata_sha256": "d2098af7b2ba03e68ccb659ca0062564c94eebefb8c9f0418c38e0f55e91f469",
+      "candidates": 45,
+      "certified": 24
+    },
+    {
+      "capture_id": "ton_iot:injection_normal4.pcap",
+      "csv": "results/packet_witness_v3/bf862e7181f51bbce735.csv",
+      "csv_sha256": "4fd07fd15ed4f189e4d68314b0c56ac09f99b3064224b8eb88c98c5d99eb5cf7",
+      "metadata": "results/packet_witness_v3/bf862e7181f51bbce735.json",
+      "metadata_sha256": "9b25033cbb760b5275a775a6cb44733c64e1e03adb795bb7f6bd2c156f40aa7b",
+      "candidates": 22,
+      "certified": 21
+    },
+    {
+      "capture_id": "ton_iot:normal_DDoS_1.pcap",
+      "csv": "results/packet_witness_v3/1fc2c9af76c298d00150.csv",
+      "csv_sha256": "792c7b969bf934ac2abf2690f24b3a955ade34eb885fdd42e6bae42a1b03d1ad",
+      "metadata": "results/packet_witness_v3/1fc2c9af76c298d00150.json",
+      "metadata_sha256": "662c95b5b7e7f1da3d58e94bc8abe686d248779fc9095e461c101a54e954952e",
+      "candidates": 319,
+      "certified": 313
+    },
+    {
+      "capture_id": "ton_iot:normal_DDoS_12.pcap",
+      "csv": "results/packet_witness_v3/65de92df88cf788928f1.csv",
+      "csv_sha256": "5264a3fd07b13bf91b7fdc9fbaed2b77c0ac9704f499048c01f6322aa5803c4b",
+      "metadata": "results/packet_witness_v3/65de92df88cf788928f1.json",
+      "metadata_sha256": "96be6e257e46f571446f60da02f475e669e551a933290a0c4e209fbf199a9ac4",
+      "candidates": 93,
+      "certified": 93
+    },
+    {
+      "capture_id": "ton_iot:normal_DDoS_4.pcap",
+      "csv": "results/packet_witness_v3/fce5c0b82b5418245a6d.csv",
+      "csv_sha256": "531567cc61316aeab70222b2bf0f45fd1b3f75475ca4c5ca7173a5c6f500802b",
+      "metadata": "results/packet_witness_v3/fce5c0b82b5418245a6d.json",
+      "metadata_sha256": "a48cc0376745e4d895c160295717fc8cd18b769111c888e608fe8e67f08cfc01",
+      "candidates": 173,
+      "certified": 173
+    },
+    {
+      "capture_id": "ton_iot:normal_DoS_1.pcap",
+      "csv": "results/packet_witness_v3/e4fe0e197a18a98bdcd2.csv",
+      "csv_sha256": "5aefc04b23eb6eb8430e3dedc98924b2bb31b43ed30876d8d25ab7e19a6eaf67",
+      "metadata": "results/packet_witness_v3/e4fe0e197a18a98bdcd2.json",
+      "metadata_sha256": "29e8bcea0105cd4f344852f6be6b235c636a2b553083bfabb36b4598a0239c1a",
+      "candidates": 617,
+      "certified": 594
+    },
+    {
+      "capture_id": "ton_iot:normal_DoS_5.pcap",
+      "csv": "results/packet_witness_v3/57ce6fffa1f0988ff278.csv",
+      "csv_sha256": "71963bfa33d0451d6668dfa5f0aae0919df09bbb2bdd12c1351df107b91aacdf",
+      "metadata": "results/packet_witness_v3/57ce6fffa1f0988ff278.json",
+      "metadata_sha256": "ef70df911f00226607a476e1e983a17f1f8c8adaa96f5685f775cd75c11d9a9e",
+      "candidates": 12,
+      "certified": 12
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS3.pcap",
+      "csv": "results/packet_witness_v3/544c381186e7968bdcc8.csv",
+      "csv_sha256": "4249d08f3765aa0dfabc87fb11ebfc13d82b9d890abf4e9b276c0c94d4b2b0fa",
+      "metadata": "results/packet_witness_v3/544c381186e7968bdcc8.json",
+      "metadata_sha256": "da21aae944a38664c102933ff8deeede3bf6ee0ee9e8702618092eca3fd97a4a",
+      "candidates": 77,
+      "certified": 73
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS4.pcap",
+      "csv": "results/packet_witness_v3/f91a2ce99035f837d07c.csv",
+      "csv_sha256": "f8484b2e4a1e82677f42ca15a5e1198499247b8518da3913fe3b166ae6025529",
+      "metadata": "results/packet_witness_v3/f91a2ce99035f837d07c.json",
+      "metadata_sha256": "557be4d41cbd523280739cab2669b82500c136a21d9d5213ca06ca12cb86b695",
+      "candidates": 78,
+      "certified": 77
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS5.pcap",
+      "csv": "results/packet_witness_v3/1d8204fc91b07c1d8748.csv",
+      "csv_sha256": "85ffad6c0545d576ba138b58dd6162c96bc0e9a335cdb4490acc941684b14177",
+      "metadata": "results/packet_witness_v3/1d8204fc91b07c1d8748.json",
+      "metadata_sha256": "d5b5381b231fe22c083963b89f7fa52bf7af27c2332432dc5b1587d8164f4c1e",
+      "candidates": 92,
+      "certified": 90
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS6.pcap",
+      "csv": "results/packet_witness_v3/7f4abafd6f06f5ced170.csv",
+      "csv_sha256": "87e9b59ffe99a023bf6c7fb7015af13ae89ab38ed6394afb01e295e20c33832b",
+      "metadata": "results/packet_witness_v3/7f4abafd6f06f5ced170.json",
+      "metadata_sha256": "12eb55f06548ade467955728006aeb1f9d79a587f2a792d04f3ddac61cfc327e",
+      "candidates": 86,
+      "certified": 85
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS7.pcap",
+      "csv": "results/packet_witness_v3/ce15797329a386c3f34c.csv",
+      "csv_sha256": "faa0e96951c8695c90eeedd79fc93066972270fee5d92e161f8ec18567f84077",
+      "metadata": "results/packet_witness_v3/ce15797329a386c3f34c.json",
+      "metadata_sha256": "869143ce16bbfe88d6a7e32c1fa3ba7bbe6aec814b14107090fa559571978eec",
+      "candidates": 75,
+      "certified": 75
+    },
+    {
+      "capture_id": "ton_iot:normal_XSS9.pcap",
+      "csv": "results/packet_witness_v3/da721044519f356c6013.csv",
+      "csv_sha256": "3fc6f650be6424d5da4f3c4521bb5013cac5a1188b1f4aec0de9f5c5be2281c0",
+      "metadata": "results/packet_witness_v3/da721044519f356c6013.json",
+      "metadata_sha256": "953a2847086c75e5c3bb4eaf98e7becca899a367f668a252aadfd29d7c529a08",
+      "candidates": 79,
+      "certified": 79
+    },
+    {
+      "capture_id": "ton_iot:normal_backdoor.pcap",
+      "csv": "results/packet_witness_v3/bccede2689d000ad9708.csv",
+      "csv_sha256": "9b1835dca23f69d25ef0abc42938d1f07ec80fe048c273fcbcd44cc00e9c5391",
+      "metadata": "results/packet_witness_v3/bccede2689d000ad9708.json",
+      "metadata_sha256": "9e287a2e40c5a63320df966fd40e7b68d6e66cef8605a3857a07d640dcd8f609",
+      "candidates": 23,
+      "certified": 14
+    },
+    {
+      "capture_id": "ton_iot:normal_runsomware1.pcap",
+      "csv": "results/packet_witness_v3/00a96d5f2292bb072001.csv",
+      "csv_sha256": "be2d36e4ccf36458752ffa9e48c17ec9176ad0a41aa5b38540138aa995827f60",
+      "metadata": "results/packet_witness_v3/00a96d5f2292bb072001.json",
+      "metadata_sha256": "ae76062af849190a1de140d246a7b6f5f97ad4fbf63e2afb7c04f4cbdfcbdf98",
+      "candidates": 988,
+      "certified": 986
+    },
+    {
+      "capture_id": "ton_iot:normal_runsomware2.pcap",
+      "csv": "results/packet_witness_v3/71384f0906d62fe59fce.csv",
+      "csv_sha256": "a3696cb87ea3693370a4774443046fe330764a1194840ad6c112a2656556be6c",
+      "metadata": "results/packet_witness_v3/71384f0906d62fe59fce.json",
+      "metadata_sha256": "32670e6817ab524acd8a985b83f5a9b7aba2ce43a7857d86994e88e357f164b3",
+      "candidates": 588,
+      "certified": 587
+    },
+    {
+      "capture_id": "ton_iot:normal_scanning1.pcap",
+      "csv": "results/packet_witness_v3/d19c027a7545d370b93c.csv",
+      "csv_sha256": "17d099c26c1635ac0284f2db84a3057434a64c96f8ae6f22c156be193fee9901",
+      "metadata": "results/packet_witness_v3/d19c027a7545d370b93c.json",
+      "metadata_sha256": "2309ee5337aba3d26174585522c19ae317ab21053a4448824d2ab5e3ba5d37d0",
+      "candidates": 16,
+      "certified": 16
+    },
+    {
+      "capture_id": "ton_iot:normal_scanning6.pcap",
+      "csv": "results/packet_witness_v3/aa96214358d393b780e3.csv",
+      "csv_sha256": "c8d661f048e6c3ad23bdda49fc63615494661eb92455da8145850ea65d393fda",
+      "metadata": "results/packet_witness_v3/aa96214358d393b780e3.json",
+      "metadata_sha256": "8fddb035391e11f5a2fa56a6e61e01e108f72ba6b6c924b6ed907eb4eed1585a",
+      "candidates": 123,
+      "certified": 123
+    },
+    {
+      "capture_id": "ton_iot:password_normal1.pcap",
+      "csv": "results/packet_witness_v3/b2735b6e7ce003dd5246.csv",
+      "csv_sha256": "c1b3ad9628bc129f94aaaf23289042717d905414a0c525bb36db1a0bfffcb723",
+      "metadata": "results/packet_witness_v3/b2735b6e7ce003dd5246.json",
+      "metadata_sha256": "65539900a1f5842a11669b750750daf8306f08c82f2ab3dfa693f1a1a3e69ce5",
+      "candidates": 2038,
+      "certified": 2036
+    },
+    {
+      "capture_id": "ton_iot:password_normal2.pcap",
+      "csv": "results/packet_witness_v3/b7df9a2d2adae672c8e5.csv",
+      "csv_sha256": "9f3bf1597f495b81c6173a583c1d9f516b501854736eca6e95bb6c0a76457f13",
+      "metadata": "results/packet_witness_v3/b7df9a2d2adae672c8e5.json",
+      "metadata_sha256": "55f82b80cda964b81c0a427bb8a25ebd2823a4a7994e4469bc74b719b1c8acc9",
+      "candidates": 327,
+      "certified": 327
+    },
+    {
+      "capture_id": "ton_iot:password_normal3.pcap",
+      "csv": "results/packet_witness_v3/0b2ca3195264a73b03de.csv",
+      "csv_sha256": "7eabc45f3f0b24dbda1ead4dc96d73ce582dd72d25f90df462b573ef260c4d38",
+      "metadata": "results/packet_witness_v3/0b2ca3195264a73b03de.json",
+      "metadata_sha256": "8dde91091a9607165e9fdd60ab94ce95cb0274c269133f445d147bf098129ea6",
+      "candidates": 292,
+      "certified": 292
+    },
+    {
+      "capture_id": "ton_iot:password_normal4.pcap",
+      "csv": "results/packet_witness_v3/4de3d14c0f79dad4a61b.csv",
+      "csv_sha256": "9cc0538e787f03668bb3159a89ee0ed33386d2d022de2af063dada5d4233bdfa",
+      "metadata": "results/packet_witness_v3/4de3d14c0f79dad4a61b.json",
+      "metadata_sha256": "e672741ff7ac3e9b8f4c80edc680ee6eb09069703c827febdf8cda93ad78b058",
+      "candidates": 311,
+      "certified": 311
+    },
+    {
+      "capture_id": "ton_iot:password_normal5.pcap",
+      "csv": "results/packet_witness_v3/06d09757a622d62b202a.csv",
+      "csv_sha256": "4c298bb3acac25adbcc10db214520e212482f6333b08dcfaa8f148296737432b",
+      "metadata": "results/packet_witness_v3/06d09757a622d62b202a.json",
+      "metadata_sha256": "ffaa7cbabcc800d3b700a18b1aa32da5e1f576522748c5862619f956ed4d015a",
+      "candidates": 220,
+      "certified": 219
+    }
+  ],
+  "complete": true,
+  "input_manifest_sha256": "b52fa4441dba1b8688824b3ef4b7ae1a5cb90a3fb5b38bef3fb1c124a3da38ca",
+  "source_code_sha256": "8e86d3589ff130331089497c238a6f6537628df7ae86d472eb8438f98dad5fca"
+}

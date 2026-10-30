@@ -1,0 +1,112 @@
+{
+  "partitions": [
+    {
+      "dataset": "cic_iot_2023",
+      "role": "train",
+      "rows": 183087,
+      "both_classes": true,
+      "captures": [
+        "cic_iot_2023:PCAPS/Backdoor_Malware/Backdoor_Malware.pcap",
+        "cic_iot_2023:PCAPS/Benign_Final/BenignTraffic2.pcap",
+        "cic_iot_2023:PCAPS/Benign_Final/BenignTraffic3.pcap",
+        "cic_iot_2023:PCAPS/BrowserHijacking/BrowserHijacking.pcap",
+        "cic_iot_2023:PCAPS/DDoS-ACK_Fragmentation/DDoS-ACK_Fragmentation12.pcap",
+        "cic_iot_2023:PCAPS/DDoS-ACK_Fragmentation/DDoS-ACK_Fragmentation6.pcap",
+        "cic_iot_2023:PCAPS/DictionaryBruteForce/DictionaryBruteForce.pcap",
+        "cic_iot_2023:PCAPS/Mirai-udpplain/Mirai-udpplain2.pcap",
+        "cic_iot_2023:PCAPS/Mirai-udpplain/Mirai-udpplain24.pcap",
+        "cic_iot_2023:PCAPS/Recon-HostDiscovery/Recon-HostDiscovery.pcap",
+        "cic_iot_2023:PCAPS/SqlInjection/SqlInjection.pcap"
+      ],
+      "sha256": "5e7c6abb786a7cc143d6552c8b8b20e0126824bd8f60b116208ee4e6ee83b6c0"
+    },
+    {
+      "dataset": "cic_iot_2023",
+      "role": "calibration",
+      "rows": 94021,
+      "both_classes": true,
+      "captures": [
+        "cic_iot_2023:PCAPS/Benign_Final/BenignTraffic1.pcap",
+        "cic_iot_2023:PCAPS/DDoS-ACK_Fragmentation/DDoS-ACK_Fragmentation5.pcap",
+        "cic_iot_2023:PCAPS/Recon-OSScan/Recon-OSScan.pcap",
+        "cic_iot_2023:PCAPS/XSS/XSS.pcap"
+      ],
+      "sha256": "7b48aec16850d6d24e80b15f30270a47178f0b9b966b5826323487e91ad40055"
+    },
+    {
+      "dataset": "cic_iot_2023",
+      "role": "final",
+      "rows": 68002,
+      "both_classes": true,
+      "captures": [
+        "cic_iot_2023:PCAPS/Benign_Final/BenignTraffic.pcap",
+        "cic_iot_2023:PCAPS/CommandInjection/CommandInjection.pcap",
+        "cic_iot_2023:PCAPS/Mirai-udpplain/Mirai-udpplain11.pcap",
+        "cic_iot_2023:PCAPS/Recon-PortScan/Recon-PortScan.pcap"
+      ],
+      "sha256": "1a2f1c4388ced28efaaa38038945ede5b4152dbaf12d3a9ebaf8748c45d056b4"
+    },
+    {
+      "dataset": "ton_iot",
+      "role": "train",
+      "rows": 384621,
+      "both_classes": true,
+      "captures": [
+        "ton_iot:MITM_normal1.pcap",
+        "ton_iot:injection_normal1.pcap",
+        "ton_iot:normal_DDoS_1.pcap",
+        "ton_iot:normal_DoS_1.pcap",
+        "ton_iot:normal_DoS_5.pcap",
+        "ton_iot:normal_XSS3.pcap",
+        "ton_iot:normal_XSS5.pcap",
+        "ton_iot:normal_XSS6.pcap",
+        "ton_iot:normal_XSS7.pcap",
+        "ton_iot:normal_XSS9.pcap",
+        "ton_iot:normal_backdoor.pcap",
+        "ton_iot:normal_runsomware1.pcap",
+        "ton_iot:normal_scanning1.pcap",
+        "ton_iot:password_normal3.pcap",
+        "ton_iot:password_normal4.pcap"
+      ],
+      "sha256": "7ed7724bea4c4a9964af61e2eb0d85af7468a9bbb55c991da37defa53c863ef1"
+    },
+    {
+      "dataset": "ton_iot",
+      "role": "calibration",
+      "rows": 100626,
+      "both_classes": true,
+      "captures": [
+        "ton_iot:MITM_normal4.pcap",
+        "ton_iot:injection_normal4.pcap",
+        "ton_iot:normal_DDoS_12.pcap",
+        "ton_iot:normal_runsomware2.pcap",
+        "ton_iot:password_normal1.pcap"
+      ],
+      "sha256": "d2a9c4f47e583101f985c1812f8f52eb103d363f6371297a5a0503e7fd1983c0"
+    },
+    {
+      "dataset": "ton_iot",
+      "role": "final",
+      "rows": 123529,
+      "both_classes": true,
+      "captures": [
+        "ton_iot:normal_DDoS_4.pcap",
+        "ton_iot:normal_XSS4.pcap",
+        "ton_iot:normal_scanning6.pcap",
+        "ton_iot:password_normal2.pcap",
+        "ton_iot:password_normal5.pcap"
+      ],
+      "sha256": "7ca6fc71e9384bc6d7b2752f577d7a8b0bc891bda56f6428280ba834010ba234"
+    }
+  ],
+  "full_capture_count": 44,
+  "raw_object_count": 67,
+  "requested_extraction_workers": 4,
+  "effective_extraction_workers": [
+    4
+  ],
+  "limitation": "Disjoint files/fingerprints do not establish independent acquisition sessions or packet-byte identity.",
+  "feature_collisions": "Distinct raw-flow observations with identical 12-feature vectors are retained. Collision/label-conflict diagnostics are descriptive only; no final labels enter model selection. Observed majority-lookup ceilings are not achievable out-of-sample performance guarantees.",
+  "physical_invariants_verified": "Directional totals, duration/time units, packet-size range/mean, byte rate, missing zero-duration rates/singleton IAT and protocol flags checked on all prepared observations.",
+  "original_submitted_pdf_sha256": "3513f7e5d42b58ca97b64728f3cb720b02341769c6f0621bb9e285a50cc1d9dc"
+}

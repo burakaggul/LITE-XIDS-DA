@@ -1,0 +1,78 @@
+{
+  "protocol_version": "flow-v2.0-development",
+  "seeds": [
+    11,
+    23,
+    42,
+    67,
+    89
+  ],
+  "primary_pair": [
+    "cic_iot_2023",
+    "ton_iot"
+  ],
+  "extractor": {
+    "library": "nfstream",
+    "idle_timeout_seconds": 30,
+    "active_timeout_seconds": 120,
+    "accounting_mode": 1,
+    "decode_tunnels": false,
+    "n_dissections": 0,
+    "statistical_analysis": true,
+    "n_meters": 4
+  },
+  "sample_cap_per_source_partition": 30000,
+  "reservoir_flows_per_capture": 30000,
+  "label_clock_tolerance_seconds": 1.0,
+  "required_ton_label_coverage": 0.95,
+  "benign_cost_grid": [
+    1,
+    2,
+    5,
+    10,
+    20
+  ],
+  "source_fpr_targets": [
+    0.01,
+    0.05
+  ],
+  "selection": "source calibration attack recall under source empirical FPR constraint; then lower FPR; then simpler cost; target labels rejected",
+  "student": {
+    "hidden_sizes": [
+      64,
+      32
+    ],
+    "epochs": 20,
+    "patience": 4,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "temperature": 3,
+    "alpha_hard": 0.25
+  },
+  "capture_split": "deterministic global capture assignment before performance inspection; final capture pool never used for fitting or selection",
+  "comparison_cells": {
+    "A": "legacy proxy, standard training",
+    "B": "common extractor, standard training",
+    "C": "legacy proxy, cost-sensitive training",
+    "D": "common extractor, cost-sensitive training"
+  },
+  "comparison_requirement": "A/B feature effect is causal only if captures, label provenance and comparable sampling can be matched; otherwise separate descriptive tracks",
+  "actual_device_required": false,
+  "status": "not yet executed",
+  "study": {
+    "version": "labeled-raw-v3-conditional",
+    "estimand": "Conditional performance among sampled flows with traceable binary label support; not full-traffic performance.",
+    "original_full_traffic_gate": "Preserved separately, never overridden by this study.",
+    "selection": "Source train/calibration only; source recall under empirical FPR<=0.01 or 0.05; source tie-breaks fixed.",
+    "preprocessing": "Source-training median imputation, signed log1p, source-training standardization.",
+    "student": "12-64-32-2 MLP, dropout 0.1; matched supervised/KD capacity; weighted CE/KL, T=3, hard fraction=0.25.",
+    "teacher": "XGBoost 300 trees, depth6, lr0.05, subsample/colsample0.9; 4 training threads.",
+    "controls": "LR C1 max_iter2000; RF200 trees; identical source cohorts and transform; all declared class costs.",
+    "quantization": "Dynamic INT8; row-wise TorchScript scoring; source-only operating-point calibration.",
+    "ablation": "At source FPR0.05, all four components share cost1 or the KD source-selected cost; each has its own original source threshold.",
+    "missingness": "Unknown labels are never imputed. Sharp bounds permit every unknown class assignment, including nonrandom missingness.",
+    "uncertainty": "Five seeds condition on fixed capture pools; not independent deployment-site confidence intervals.",
+    "chronology": "Capture-disjoint roles are retained; capture files need not be independent acquisition sessions.",
+    "compression_scope": "Desktop completed-flow inference only; not Raspberry Pi/Jetson evidence."
+  }
+}

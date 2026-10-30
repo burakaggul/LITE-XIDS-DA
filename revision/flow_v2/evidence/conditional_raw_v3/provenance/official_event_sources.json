@@ -1,0 +1,273 @@
+{
+  "files": [
+    {
+      "file": "GroundTruth_Network_1.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_1.csv",
+      "raw_sha256": "79f2d99bf34965126480bc2f18949b67f7fc0a26c135c24a88f9aae700913f28",
+      "bytes": 63357167,
+      "zip_crc32": 2658898085,
+      "index_path": "official_event_index/GroundTruth_Network_1.parquet",
+      "index_sha256": "06da95f6350999c6f050c17c12d5cf0c69177c73e1f8c196083b3922d05d76a8",
+      "rows": 1000000,
+      "explicit_types": {
+        "scanning": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_1.csv"
+    },
+    {
+      "file": "GroundTruth_Network_10.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_10.csv",
+      "raw_sha256": "b0746eb0cd48473ba6edb074064e2c2ce7693f23818d54abd195c69ebdea7746",
+      "bytes": 57167407,
+      "zip_crc32": 3003434846,
+      "index_path": "official_event_index/GroundTruth_Network_10.parquet",
+      "index_sha256": "7ecfd46095f206e700eee03b509413f6ea616c3469d69fe2146a595586285e86",
+      "rows": 1000000,
+      "explicit_types": {
+        "ddos": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_10.csv"
+    },
+    {
+      "file": "GroundTruth_Network_11.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_11.csv",
+      "raw_sha256": "864b940ac93a6160a7ae4730d8c61eb6442c26f80b9c943f8672371f34c7d546",
+      "bytes": 57153006,
+      "zip_crc32": 359787764,
+      "index_path": "official_event_index/GroundTruth_Network_11.parquet",
+      "index_sha256": "c3707f07b0655bddfcba438d4ebcfbdc846e3fd9adaf1935e4f9c35936466eb3",
+      "rows": 1000000,
+      "explicit_types": {
+        "ddos": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_11.csv"
+    },
+    {
+      "file": "GroundTruth_Network_12.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_12.csv",
+      "raw_sha256": "d6486f75626c511cf4c4171fe2336f688709adc9d0f4dccbcb54d97b90c1021d",
+      "bytes": 57179289,
+      "zip_crc32": 2701440138,
+      "index_path": "official_event_index/GroundTruth_Network_12.parquet",
+      "index_sha256": "3b00da35f96e68ebde865201595441aae24c5b8fe7c65579056efeb739ac32be",
+      "rows": 1000000,
+      "explicit_types": {
+        "ddos": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_12.csv"
+    },
+    {
+      "file": "GroundTruth_Network_13.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_13.csv",
+      "raw_sha256": "7b93a47bd2a09d999d18eaa1d91d34d1be200e303363e7f93f582554bb87b45f",
+      "bytes": 57334346,
+      "zip_crc32": 1426921307,
+      "index_path": "official_event_index/GroundTruth_Network_13.parquet",
+      "index_sha256": "09523f321677c4ba8b4bbb3285c3efc1b79d83155be1153959940f4732f2bf89",
+      "rows": 1000000,
+      "explicit_types": {
+        "ddos": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_13.csv"
+    },
+    {
+      "file": "GroundTruth_Network_14.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_14.csv",
+      "raw_sha256": "2411ab4164dd93caeba360ef650b938e40e194673085079aa444c04814c39517",
+      "bytes": 58304423,
+      "zip_crc32": 4059884295,
+      "index_path": "official_event_index/GroundTruth_Network_14.parquet",
+      "index_sha256": "e0b0ef3c009d9573e67571a9379bad0519fa8b9875697da75e89147f09de5728",
+      "rows": 1000000,
+      "explicit_types": {
+        "ddos": 816711,
+        "password": 183289
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_14.csv"
+    },
+    {
+      "file": "GroundTruth_Network_15.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_15.csv",
+      "raw_sha256": "d1d4cb491cb6edda3523f7424d24ea1afd4496a933e60b3ec357286f7f0f542f",
+      "bytes": 58467300,
+      "zip_crc32": 2590224605,
+      "index_path": "official_event_index/GroundTruth_Network_15.parquet",
+      "index_sha256": "55927e6c039b86b4f617c2246c44bb585f7387c92211acf4bcae3f27589c37e8",
+      "rows": 1000000,
+      "explicit_types": {
+        "password": 534871,
+        "xss": 465129
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_15.csv"
+    },
+    {
+      "file": "GroundTruth_Network_16.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_16.csv",
+      "raw_sha256": "d1d4cb491cb6edda3523f7424d24ea1afd4496a933e60b3ec357286f7f0f542f",
+      "bytes": 58467300,
+      "zip_crc32": 2590224605,
+      "index_path": "official_event_index/GroundTruth_Network_16.parquet",
+      "index_sha256": "55927e6c039b86b4f617c2246c44bb585f7387c92211acf4bcae3f27589c37e8",
+      "rows": 1000000,
+      "explicit_types": {
+        "password": 534871,
+        "xss": 465129
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_16.csv"
+    },
+    {
+      "file": "GroundTruth_Network_17.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_17.csv",
+      "raw_sha256": "68e999eaa3cb21b7e56cc03b9a1363f4b7b3075920d71d97c8cb8ad23df620f9",
+      "bytes": 55515897,
+      "zip_crc32": 2222007772,
+      "index_path": "official_event_index/GroundTruth_Network_17.parquet",
+      "index_sha256": "4af7860437a260194596731af009376e4408b94006a76b2470d5583b6e983888",
+      "rows": 1000000,
+      "explicit_types": {
+        "xss": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_17.csv"
+    },
+    {
+      "file": "GroundTruth_Network_18.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_18.csv",
+      "raw_sha256": "446170e48b77da494809648ebfd45c7d517ad34baf34079d200d282235878508",
+      "bytes": 45787608,
+      "zip_crc32": 3526238021,
+      "index_path": "official_event_index/GroundTruth_Network_18.parquet",
+      "index_sha256": "9cf5e85a206e80835f64b5a178b4959d7934f727228bfd041e71eaf09140ada2",
+      "rows": 801188,
+      "explicit_types": {
+        "xss": 605685,
+        "ransomware": 5629,
+        "backdoor": 188864,
+        "mitm": 1010
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_18.csv"
+    },
+    {
+      "file": "GroundTruth_Network_2.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_2.csv",
+      "raw_sha256": "3a688436c600ad2694120b31d958519d7d7acd70583617e136f972853660290a",
+      "bytes": 63083548,
+      "zip_crc32": 1178307842,
+      "index_path": "official_event_index/GroundTruth_Network_2.parquet",
+      "index_sha256": "02c3f356caf55fe9285abde55699ff11dea50bb17aa76a3e92c3b572067cfe79",
+      "rows": 1000000,
+      "explicit_types": {
+        "scanning": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_2.csv"
+    },
+    {
+      "file": "GroundTruth_Network_3.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_3.csv",
+      "raw_sha256": "89088705e97c05694b6be0e9e55b4e3edbe3a9eedd87383d10ceb0f11957d033",
+      "bytes": 62780574,
+      "zip_crc32": 3955606553,
+      "index_path": "official_event_index/GroundTruth_Network_3.parquet",
+      "index_sha256": "6e0ad1b0a9202a0931ed6e97815828a7c49bd818f3a248e822628d5c2da80d2e",
+      "rows": 1000000,
+      "explicit_types": {
+        "scanning": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_3.csv"
+    },
+    {
+      "file": "GroundTruth_Network_4.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_4.csv",
+      "raw_sha256": "7dd2fd0469db61e5eb8afac45055ac12768803369895f54c01e9165bc59760bc",
+      "bytes": 62613989,
+      "zip_crc32": 3006324736,
+      "index_path": "official_event_index/GroundTruth_Network_4.parquet",
+      "index_sha256": "97ecadc71f549092aba950988130164dc7b30c2c539f3026d06fe17e71310f64",
+      "rows": 1000000,
+      "explicit_types": {
+        "scanning": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_4.csv"
+    },
+    {
+      "file": "GroundTruth_Network_5.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_5.csv",
+      "raw_sha256": "dfa804275035d651ad3a324d54562afafc9aebfd4ee9b7eb727fff3955695cce",
+      "bytes": 62708208,
+      "zip_crc32": 1717672265,
+      "index_path": "official_event_index/GroundTruth_Network_5.parquet",
+      "index_sha256": "c016b4b21006e85c10201832774de8ca17206c70389c8d17f97d59ce3f816ef6",
+      "rows": 1000000,
+      "explicit_types": {
+        "scanning": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_5.csv"
+    },
+    {
+      "file": "GroundTruth_Network_6.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_6.csv",
+      "raw_sha256": "e66dfa775b3b1eb442054b25c4df4fb4468885edb53cb52acf9f43e595c20a8a",
+      "bytes": 62815670,
+      "zip_crc32": 124317749,
+      "index_path": "official_event_index/GroundTruth_Network_6.parquet",
+      "index_sha256": "5783c4cafb0af64d4811842567c67b87fb88a44265b0eb2676c6684dceb6263a",
+      "rows": 1000000,
+      "explicit_types": {
+        "scanning": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_6.csv"
+    },
+    {
+      "file": "GroundTruth_Network_7.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_7.csv",
+      "raw_sha256": "9c099cfd1c39117a2f797cfd900b507c552221be3cb66a9497c34202c3759e88",
+      "bytes": 63498788,
+      "zip_crc32": 1928470332,
+      "index_path": "official_event_index/GroundTruth_Network_7.parquet",
+      "index_sha256": "3354f76dd77ecbf25322e9e1f6471caba6f1431367faa9c47f0f6b876a2a5274",
+      "rows": 1000000,
+      "explicit_types": {
+        "scanning": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_7.csv"
+    },
+    {
+      "file": "GroundTruth_Network_8.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_8.csv",
+      "raw_sha256": "826d9a99387418267249979788ee42d9aebeb7b3ca2675be89172f0d7d23f975",
+      "bytes": 59973905,
+      "zip_crc32": 1626228293,
+      "index_path": "official_event_index/GroundTruth_Network_8.parquet",
+      "index_sha256": "cf10df2bd2028def9c867d32ff005821042faf21dc03740712bc4f44f737e70a",
+      "rows": 1000000,
+      "explicit_types": {
+        "scanning": 138336,
+        "dos": 196227,
+        "injection": 451136,
+        "ddos": 214301
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_8.csv"
+    },
+    {
+      "file": "GroundTruth_Network_9.csv",
+      "raw_path": "data/raw/flow_v2/ton_official_events/GroundTruth_Network_9.csv",
+      "raw_sha256": "5fab83f3602faea61770f204d7cf67a15d814ef825748147b340be3b324578e8",
+      "bytes": 57464605,
+      "zip_crc32": 3586003109,
+      "index_path": "official_event_index/GroundTruth_Network_9.parquet",
+      "index_sha256": "85340534ad617134fb8d2c301df2e5cbf0e21c2ee1cb91622bf4d1bc7402bb67",
+      "rows": 1000000,
+      "explicit_types": {
+        "ddos": 1000000
+      },
+      "official_url": "https://unsw-my.sharepoint.com/personal/z5025758_ad_unsw_edu_au/Documents/TON_IoT%20datasets/SecuityEvents_GroundTruth_datasets/SecurityEvents_Network_datasets/GroundTruth_Network_9.csv"
+    }
+  ],
+  "complete": true,
+  "official_source": true,
+  "archive_sha256": "3b01d4b6bebd90c7daafe42030ae5ffcf0437dad84753aedafbef1a5618d7162",
+  "archive_crc_verified": true,
+  "authority": "Downloaded through the public author-hosted UNSW SharePoint folder linked by the official TON_IoT project.",
+  "upstream_version": "Observed file modification date 8 February 2024; SHA256 pins this downloaded snapshot, not an asserted historical release identity.",
+  "annotation_amendment_sha256": "aec8d8c70f47f7671e1db15d3b13df3de557125ecb0197362874dcc0e83cd83b",
+  "code_sha256": "a5564259c971d9e328f7b1517224fd215dcd3f417b83dc22d24d9f42dad130fa"
+}

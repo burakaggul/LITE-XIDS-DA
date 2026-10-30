@@ -51,16 +51,17 @@ for the v1.0.0 manuscript results. Its fixed cohort comprises 19 mirrored
 CIC-IoT-2023 captures, all 25 captures in the selected TON mirror, and 23 original
 Zeek-schema label tables. Both sources are processed with NFStream 6.6.0 using
 the same 12 physical feature definitions. Original timestamps and complete packet
-bytes are preserved through chronology normalization; two structurally incomplete
+bytes are preserved through chronology normalization; three structurally incomplete
 source tails are quarantined without fabricating bytes.
 
 The common-flow experiment has **not passed its predeclared annotation-quality
-gate**. Label coverage is 93.6348%, below the required 95%. An additional download
+gate**. Initial label coverage was 93.6348%, below the required 95%. An additional download
 of all 18 original author-hosted `GroundTruth_Network` CSV files did not resolve
 the unsupported flows under the unchanged tuple/time and unanimous-label rules.
-Of 41,621 unresolved sampled flows, 32,972 have no matching tuple in any of the
+In that initial snapshot, of 41,621 unresolved sampled flows, 32,972 had no matching tuple in any of the
 41 annotation tables at any timestamp. Common training, common final evaluation,
-and common LR/RF/XAI controls therefore remain unexecuted. Missing events are not
+and common LR/RF/XAI controls therefore remained unexecuted for the primary
+full-traffic study. A separate conditional v3 diagnostic is described below. Missing events are not
 assigned benign labels and low-coverage final captures are not silently dropped.
 The worst-coverage capture, `normal_scanning6.pcap`, was independently streamed
 from the official author-hosted folder and its complete SHA256 equals the pinned
@@ -75,7 +76,34 @@ or proof that generalization is solved. The cost intervention does not reliably
 reduce external false alarms. INT8 reduces serialized size but is slower in the
 recorded matched desktop benchmark. No Raspberry Pi or Jetson execution is claimed.
 
-See `revision/flow_v2/README.txt` for the two-runtime workflow and its stopped gate.
+### Separately Registered Conditional Raw Study (v3)
+
+IPv6 ICMP normalization recovers 437 sampled labels; packet-level witnesses
+certify 6,645 additional flows without assuming that empty time gaps contain
+unlabeled packets. Reconstructed packet counts, bytes, timestamps, flags and
+native identity must match. The 97 rejected gap candidates remain unknown.
+Current coverage is **94.7179%**, with **34,539 unknown outcomes**. The unchanged
+95% primary full-traffic gate is still failed, not overridden.
+
+The separately registered `labeled_raw_v3` experiment estimates performance only
+on traceably labeled sampled flows. It has completed five-seed source-only fits,
+six model families, 480 policies, 80 matched-cost component rows, 560 sharp
+missing-outcome-bound rows, external probability-scale SHAP/PDP/stability and
+20 matched TorchScript CPU profiles. All source bundles freeze before any final
+score inspection. Unknown labels are not imputed; bounds allow nonrandom
+missingness. They are identification bounds, not confidence intervals.
+
+At the 0.01 source-calibration FPR limit, cost-sensitive KD external macro-F1
+is 0.0767/0.4072, recall 0.0659/0.1133 and FPR 0.0018/0.0477 for
+CIC-to-TON/TON-to-CIC. These are not useful transfer outcomes. Source constraints
+do not guarantee final FPR. The TON final labeled cohort has 98.59% attacks and
+is not natural traffic prevalence. INT8 reduces state bytes from 14,741 to
+8,127 without demonstrating a latency benefit. No embedded-device measurement
+has been performed. Legacy table and raw cohorts differ; their score changes
+are not a causal feature-extractor improvement.
+
+See `revision/flow_v2/README.txt` for the two-runtime workflow, stopped primary
+gate, versioned annotation preparation and separate conditional pipeline.
 The `evidence/` directory contains aggregate numerical outputs, provenance hashes
 and execution audits only. It excludes raw packets, original CSV annotations,
 model pickles, reviewer correspondence and private working reports. New runs

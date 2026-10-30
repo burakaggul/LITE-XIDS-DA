@@ -1,0 +1,14 @@
+{
+  "repairs": [
+    {
+      "capture_id": "ton_iot:injection_normal4.pcap",
+      "original_raw_sha256": "55cd03ee52f27382f89bb6bc9c61a21b234fd126d4efa0d35d8b8e7a6a240fb0",
+      "incomplete_records_excluded": 1,
+      "normalized_source_sha256": "cc9f5246e0db5f8fc3d92e5894b03d04ccf08bb5f2404077b5127483260d3602",
+      "sampled_flow_records_unchanged": true,
+      "original_frame_archive": "archive/legacy_tail_v3/ton_iot/bf862e7181f51bbce735.csv.gz",
+      "new_frame_sha256": "e6b08d61f1e8bb20b4a758744c5fb45943435eb8c18553e4ceb79c25788c7069"
+    }
+  ],
+  "raw_sources_unchanged": true
+}

@@ -1,0 +1,110 @@
+{
+  "complete": true,
+  "files": [
+    {
+      "file": "GroundTruth_Network_1.csv",
+      "rows": 1000000,
+      "sha256": "79f2d99bf34965126480bc2f18949b67f7fc0a26c135c24a88f9aae700913f28"
+    },
+    {
+      "file": "GroundTruth_Network_10.csv",
+      "rows": 1000000,
+      "sha256": "b0746eb0cd48473ba6edb074064e2c2ce7693f23818d54abd195c69ebdea7746"
+    },
+    {
+      "file": "GroundTruth_Network_11.csv",
+      "rows": 1000000,
+      "sha256": "864b940ac93a6160a7ae4730d8c61eb6442c26f80b9c943f8672371f34c7d546"
+    },
+    {
+      "file": "GroundTruth_Network_12.csv",
+      "rows": 1000000,
+      "sha256": "d6486f75626c511cf4c4171fe2336f688709adc9d0f4dccbcb54d97b90c1021d"
+    },
+    {
+      "file": "GroundTruth_Network_13.csv",
+      "rows": 1000000,
+      "sha256": "7b93a47bd2a09d999d18eaa1d91d34d1be200e303363e7f93f582554bb87b45f"
+    },
+    {
+      "file": "GroundTruth_Network_14.csv",
+      "rows": 1000000,
+      "sha256": "2411ab4164dd93caeba360ef650b938e40e194673085079aa444c04814c39517"
+    },
+    {
+      "file": "GroundTruth_Network_15.csv",
+      "rows": 1000000,
+      "sha256": "d1d4cb491cb6edda3523f7424d24ea1afd4496a933e60b3ec357286f7f0f542f"
+    },
+    {
+      "file": "GroundTruth_Network_16.csv",
+      "rows": 1000000,
+      "sha256": "d1d4cb491cb6edda3523f7424d24ea1afd4496a933e60b3ec357286f7f0f542f"
+    },
+    {
+      "file": "GroundTruth_Network_17.csv",
+      "rows": 1000000,
+      "sha256": "68e999eaa3cb21b7e56cc03b9a1363f4b7b3075920d71d97c8cb8ad23df620f9"
+    },
+    {
+      "file": "GroundTruth_Network_18.csv",
+      "rows": 801188,
+      "sha256": "446170e48b77da494809648ebfd45c7d517ad34baf34079d200d282235878508"
+    },
+    {
+      "file": "GroundTruth_Network_2.csv",
+      "rows": 1000000,
+      "sha256": "3a688436c600ad2694120b31d958519d7d7acd70583617e136f972853660290a"
+    },
+    {
+      "file": "GroundTruth_Network_3.csv",
+      "rows": 1000000,
+      "sha256": "89088705e97c05694b6be0e9e55b4e3edbe3a9eedd87383d10ceb0f11957d033"
+    },
+    {
+      "file": "GroundTruth_Network_4.csv",
+      "rows": 1000000,
+      "sha256": "7dd2fd0469db61e5eb8afac45055ac12768803369895f54c01e9165bc59760bc"
+    },
+    {
+      "file": "GroundTruth_Network_5.csv",
+      "rows": 1000000,
+      "sha256": "dfa804275035d651ad3a324d54562afafc9aebfd4ee9b7eb727fff3955695cce"
+    },
+    {
+      "file": "GroundTruth_Network_6.csv",
+      "rows": 1000000,
+      "sha256": "e66dfa775b3b1eb442054b25c4df4fb4468885edb53cb52acf9f43e595c20a8a"
+    },
+    {
+      "file": "GroundTruth_Network_7.csv",
+      "rows": 1000000,
+      "sha256": "9c099cfd1c39117a2f797cfd900b507c552221be3cb66a9497c34202c3759e88"
+    },
+    {
+      "file": "GroundTruth_Network_8.csv",
+      "rows": 1000000,
+      "sha256": "826d9a99387418267249979788ee42d9aebeb7b3ca2675be89172f0d7d23f975"
+    },
+    {
+      "file": "GroundTruth_Network_9.csv",
+      "rows": 1000000,
+      "sha256": "5fab83f3602faea61770f204d7cf67a15d814ef825748147b340be3b324578e8"
+    }
+  ],
+  "annotation_rows": 17801188,
+  "unique_file_hashes": 17,
+  "identical_upstream_files": [
+    [
+      "GroundTruth_Network_15.csv",
+      "GroundTruth_Network_16.csv"
+    ]
+  ],
+  "duplicate_annotation_note": "Repeated identical author-hosted files do not provide independent label evidence; repeated support cannot outweigh any conflicting binary label.",
+  "official_source_manifest_sha256": "248fbff0fe29ceb6168712f0cdb109c7d2be3a83f82954b8b5bbc79c6d4b8b5f",
+  "all_zip_members_and_raw_files_byte_identical": true,
+  "all_indexes_hash_and_rowcount_checked": true,
+  "point_times_preserved_without_duration": true,
+  "absence_never_labeled_benign": true,
+  "code_sha256": "4e1104153d5448d3715b1182f82588cf00d51d31993115b34f960b227d75382d"
+}

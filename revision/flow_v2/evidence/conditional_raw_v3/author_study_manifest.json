@@ -1,0 +1,52 @@
+{
+  "registered_utc": "2026-10-30T08:56:38.991623+00:00",
+  "specification": {
+    "version": "labeled-raw-v3-conditional",
+    "estimand": "Conditional performance among sampled flows with traceable binary label support; not full-traffic performance.",
+    "original_full_traffic_gate": "Preserved separately, never overridden by this study.",
+    "selection": "Source train/calibration only; source recall under empirical FPR<=0.01 or 0.05; source tie-breaks fixed.",
+    "preprocessing": "Source-training median imputation, signed log1p, source-training standardization.",
+    "student": "12-64-32-2 MLP, dropout 0.1; matched supervised/KD capacity; weighted CE/KL, T=3, hard fraction=0.25.",
+    "teacher": "XGBoost 300 trees, depth6, lr0.05, subsample/colsample0.9; 4 training threads.",
+    "controls": "LR C1 max_iter2000; RF200 trees; identical source cohorts and transform; all declared class costs.",
+    "quantization": "Dynamic INT8; row-wise TorchScript scoring; source-only operating-point calibration.",
+    "ablation": "At source FPR0.05, all four components share cost1 or the KD source-selected cost; each has its own original source threshold.",
+    "missingness": "Unknown labels are never imputed. Sharp bounds permit every unknown class assignment, including nonrandom missingness.",
+    "uncertainty": "Five seeds condition on fixed capture pools; not independent deployment-site confidence intervals.",
+    "chronology": "Capture-disjoint roles are retained; capture files need not be independent acquisition sessions.",
+    "compression_scope": "Desktop completed-flow inference only; not Raspberry Pi/Jetson evidence."
+  },
+  "code_sha256": {
+    "revision/flow_v2/labeled_raw_experiment.py": "e2d86dae3a64d50a6ebf956e75f5c75a2aa0ef6dbc155eb0c2cda82268fc040d",
+    "revision/flow_v2/cost_models.py": "40857696dcec334e91a5435d5b1a46a2ba8cfbf1d3a245834201bc02089fddee",
+    "revision/flow_v2/features.py": "0021676777894b3b2766174e598b686a77057f8cd2c068f4a60584fd8c851b2d",
+    "revision/flow_v2/operating_points.py": "c0353ceaaffaf3c7a891f5e132354032aa08433f2da9933b124aab04d0544419",
+    "revision/flow_v2/missing_label_bounds.py": "d57d53bac9844c5b78bc20afa1d1200412fc1001a677a8205a080d3aff31bfa3",
+    "revision/code/neural_revision.py": "f699c70e0521e83ba2cf06f3d66bad78ad02add28cb55a72aaff02807d6509e5",
+    "revision/code/protocol.py": "a53f4e5ddf390a9fd234baae3ba5d09661f824f1ae610f0e30555e86079388ef"
+  },
+  "snapshot_sha256": {
+    "provenance/label_schema_v3.json": "446c73d74755e1dbb7511c6853db716777ac106c033f8915dc9992ac1e4f823c",
+    "provenance/all_packet_witnesses_v3.json": "ee181dd739d6d6a949e7530362a7fd4703b5d7e9a807f6ccb6015d6a895e0a2b",
+    "provenance/official_event_sources.json": "248fbff0fe29ceb6168712f0cdb109c7d2be3a83f82954b8b5bbc79c6d4b8b5f",
+    "provenance/capture_plan.json": "8f4d3dd0d9fc29961613d180ac78067d11c4b84d8c5f16bfe3e69257d714e8b1",
+    "provenance/prepared_audit.json": "82ae9472c0578f36f5dc09f54c091a384fde45262f594e79d9c567705b0b536a",
+    "provenance/source_integrity.json": "06c83e763b7c1652936beb8f7f20bc2277d7de5441c21b38f82b34c49eda70eb",
+    "provenance/tail_repair_v3.json": "d2e9bd2168c124253b31b4e7aec0c8e9625b93e46b224ac58138ad2667b9e41d",
+    "data/cic_iot_2023/train.parquet": "5e7c6abb786a7cc143d6552c8b8b20e0126824bd8f60b116208ee4e6ee83b6c0",
+    "data/cic_iot_2023/calibration.parquet": "7b48aec16850d6d24e80b15f30270a47178f0b9b966b5826323487e91ad40055",
+    "data/cic_iot_2023/final.parquet": "1a2f1c4388ced28efaaa38038945ede5b4152dbaf12d3a9ebaf8748c45d056b4",
+    "data/ton_iot/train.parquet": "7ed7724bea4c4a9964af61e2eb0d85af7468a9bbb55c991da37defa53c863ef1",
+    "data/ton_iot/calibration.parquet": "d2a9c4f47e583101f985c1812f8f52eb103d363f6371297a5a0503e7fd1983c0",
+    "data/ton_iot/final.parquet": "7ca6fc71e9384bc6d7b2752f577d7a8b0bc891bda56f6428280ba834010ba234",
+    "data/unknown.parquet": "8cfd6ca41ca0fbdfa29d4435a5e1dc2e231fe837e0d028e14dc26928940523f3",
+    "data/full_traffic_manifest.json": "fcceec922dd733285933547c58e4601a4ceae9bafa4b7554d600c24c911ea35b",
+    "config.json": "5934e1521f5a41e82bc38969db22253988a4f622ae1f5ed20420358f752a1db5"
+  },
+  "original_full_traffic_quality_gate_passed": false,
+  "original_full_traffic_label_coverage": 0.9471787044796937,
+  "original_requirement_unchanged": 0.95,
+  "conditional_study_only": true,
+  "common_model_performance_observed_before_registration": false,
+  "no_target_labels_in_training_or_policy_selection": true
+}

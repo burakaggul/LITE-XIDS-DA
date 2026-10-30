@@ -1,0 +1,15 @@
+{
+  "policies": 480,
+  "matched_components": 80,
+  "missing_label_bound_rows": 560,
+  "all_confusion_metrics_independently_recomputed": true,
+  "all_source_choices_independently_reproduced": true,
+  "all_data_and_model_hashes_verified": true,
+  "all_source_cohorts_matched": true,
+  "all_20_subtype_totals_matched": true,
+  "source_bundles": 10,
+  "original_full_traffic_quality_gate_passed": false,
+  "conditional_scope": true,
+  "unknown_labels_imputed": false,
+  "study_manifest_sha256": "0b81d2ec6270b78443f5ee69072ddf1cdfd004e1ae8ef5ca960d72f35336dce7"
+}
